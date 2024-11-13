@@ -20,7 +20,9 @@ public class MasinaTunsIarbaTest {
         // TODO code application logic here
         Aparat aparat = new Aparat("prod","model1",176,"albastru",155.3);
         System.out.println(aparat);
-        MasinaTunsIarba masina = new MasinaTunsIarba("prod","model1",176,"albastru",155.3,"Benzina","Otel",5.8,25,6,25);
+        MasinaTunsIarba m = new MasinaTunsIarba();
+        System.out.println(m);
+        MasinaTunsIarba masina = new MasinaTunsIarba("Steinhaus","PRO-GLM502",999.99,"rosu",31,"Benzina","Otel",3.5,50,7,60);
         System.out.println(masina);
         MasinaTunsIarba masina2 = new MasinaTunsIarba(masina);
         System.out.println(masina2);
