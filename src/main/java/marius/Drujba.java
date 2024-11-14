@@ -14,5 +14,24 @@ public class Drujba extends Aparat {
     private double capacitateCilindrica;
     private int vitezaMaximaRPM;
     private int capacitateRezervor;
-    private int capacitateRezervorUlei;   
+    private int capacitateRezervorUlei; 
+    
+ @Override
+    public String toString(){
+        return super.toString() + "Putere motor: " + putereMotor + '\n' +
+                "Capacitate Cilindrica: " + capacitateCilindrica + '\n' +
+                "Viteza Maxima : " + vitezaMaximaRPM + " RPM" + '\n' +
+                "Capacitate Rezervor: " + capacitateRezervor + '\n' +
+                "Capacitate Rezervor Ulei: " + capacitateRezervorUlei + '\n';        
+    }
+    
+ public Drujba(){
+        super();
+        putereMotor = 0;
+        capacitateCilindrica = 0;
+        vitezaMaximaRPM = 0;
+        capacitateRezervor = 0;
+        capacitateRezervorUlei = 0;
+    }
 }
+

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package marius.test;
+import marius.Drujba;
 
 /**
  *
@@ -15,7 +16,8 @@ public class DrujbaTest {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Testare");
+        Drujba d = new Drujba();
+        System.out.print(d);
     }
     
 }
