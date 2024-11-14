@@ -15,4 +15,5 @@ public class Drujba extends Aparat {
     private int vitezaMaximaRPM;
     private int capacitateRezervor;
     private int capacitateRezervorUlei;
+    
 }
