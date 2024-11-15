@@ -14,7 +14,7 @@ public class AspiratorUmedTest {
     public static void main(String[] args) {
         AspiratorUmed aspirator = new AspiratorUmed();
         System.out.print(aspirator);
-        AspiratorUmed aspirator2 = new AspiratorUmed(5.5, 75, 6.4, 4.5, true);
+        AspiratorUmed aspirator2 = new AspiratorUmed("Beko", "cu sac", 125, "Rosu", 10, 5.5, 75, 6.4, 4.5, true);
         System.out.print(aspirator2);
         AspiratorUmed aspirator3 = new AspiratorUmed(aspirator2);
         System.out.print(aspirator3);

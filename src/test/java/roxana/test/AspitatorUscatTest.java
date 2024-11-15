@@ -15,9 +15,10 @@ public class AspitatorUscatTest {
     public static void main(String[] args){
         AspiratorUscat asp = new AspiratorUscat();
         System.out.print(asp);
-        AspiratorUscat asp2 = new AspiratorUcat(2.5, "carbon activ", 200, 60, 5.4);
+        AspiratorUscat asp2 = new AspiratorUscat("Samsung", "vertical", 550, "albastru", 6, 4.2, "carbon", 190, 60, "plastic");
         System.out.print(asp2);
-        AspiratorUscat asp3 = new AspiratorUscat(4.5,"HEPA", 220, 45, 6.3);
+        AspiratorUscat asp3 = new AspiratorUscat("Bosh", "vertical", 640, "negru", 5, 3.5, "HERA", 220, 45, "metal");
+        System.out.print(asp3);
     }
     
 }
