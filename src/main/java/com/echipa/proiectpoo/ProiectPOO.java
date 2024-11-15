@@ -4,9 +4,6 @@
 
 package com.echipa.proiectpoo;
 
-import comun.Aparat;
-import claudiu.MasinaTunsIarba;
-
 /**
  *
  * @author cc642
