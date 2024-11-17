@@ -36,11 +36,11 @@ public AspiratorUmed(){
     public AspiratorUmed(String producator, String model, double pret, String culoare, double greutate,
             double capacitateRezervorApa, int nivelZgomot, double lungimeCablu, double lungimeFurtun, boolean utilizareDetergent){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
-        capacitateRezervorApa = capacitateRezervorApa;
-        nivelZgomot = nivelZgomot;
-        lungimeCablu = lungimeCablu;
-        lungimeFurtun = lungimeFurtun;
-        utilizareDetergent = utilizareDetergent;
+        this.capacitateRezervorApa = capacitateRezervorApa;
+        this.nivelZgomot = nivelZgomot;
+        this.lungimeCablu = lungimeCablu;
+        this.lungimeFurtun = lungimeFurtun;
+        this.utilizareDetergent = utilizareDetergent;
     }
  //Constructor de copiere
     public AspiratorUmed(AspiratorUmed a){

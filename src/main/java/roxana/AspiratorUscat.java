@@ -35,11 +35,11 @@ public class AspiratorUscat extends Aparat{
  public AspiratorUscat(String producator, String model, double pret, String culoare, double greutate,
             double capacitateSac, String tipFiltru , int putereAspirare, int durataBateriei, String material){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
-        capacitateSac = capacitateSac;
-        tipFiltru = tipFiltru;
-        putereAspirare = putereAspirare;
-        durataBateriei = durataBateriei;
-        material = material;
+        this.capacitateSac = capacitateSac;
+        this.tipFiltru = tipFiltru;
+        this.putereAspirare = putereAspirare;
+        this.durataBateriei = durataBateriei;
+        this.material = material;
  }
  public AspiratorUscat(AspiratorUscat a){
         super(a);
