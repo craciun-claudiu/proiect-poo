@@ -3,18 +3,59 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package vivi;
-
 import comun.Aparat;
 
 /**
  *
- * @author Viv
+ * @author vh135
  */
-public class AparatCuratatPardoseli extends Aparat{
+public class AparatCuratatPardoseli extends Aparat {
     private String marca;
     private String model;
-    private int capacitateBaterie;
-    private double capacitateRezervorApa;
-    private double putere;
-    
+    private int capacitateBaterie; // capacitate baterie în mAh
+    private double capacitateRezervorApa; // capacitatea rezervorului în litri
+    private double putere; // puterea aparatului în W
+
+    // Rescrierea metodei toString
+    @Override
+    public String toString() {
+        return super.toString() + 
+               "Marcă: " + marca + '\n' +
+               "Model: " + model + '\n' +
+               "Capacitate baterie: " + capacitateBaterie + " mAh" + '\n' +
+               "Capacitate rezervor apă: " + capacitateRezervorApa + " l" + '\n' +
+               "Putere: " + putere + " W" + '\n';
+    }
+
+    // Constructor fără parametri
+    public AparatCuratatPardoseli() {
+        super(); // Apelează constructorul fără parametri din clasa Aparat
+        this.marca = "Necunoscut";
+        this.model = "Necunoscut";
+        this.capacitateBaterie = 0;
+        this.capacitateRezervorApa = 0.0;
+        this.putere = 0.0;
+    }
+
+    // Constructor cu toți parametrii
+    public AparatCuratatPardoseli(String producator, String model, double pret, String culoare, double greutate,
+                                  String marca, String modelSpecific, int capacitateBaterie, 
+                                  double capacitateRezervorApa, double putere) {
+        super(producator, model, pret, culoare, greutate); // Apelează constructorul cu parametri din clasa Aparat
+        this.marca = marca;
+        this.model = modelSpecific;
+        this.capacitateBaterie = capacitateBaterie;
+        this.capacitateRezervorApa = capacitateRezervorApa;
+        this.putere = putere;
+    }
+
+    // Constructor de copiere
+    public AparatCuratatPardoseli(AparatCuratatPardoseli a) {
+        super(a); // Apelează constructorul de copiere din clasa Aparat
+        this.marca = a.marca;
+        this.model = a.model;
+        this.capacitateBaterie = a.capacitateBaterie;
+        this.capacitateRezervorApa = a.capacitateRezervorApa;
+        this.putere = a.putere;
+    }
 }
