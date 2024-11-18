@@ -24,6 +24,7 @@ public class AspiratorUscat extends Aparat{
                 "Material: " + material + '\n';
         
     }
+    //Constructor fara parametri
     public AspiratorUscat(){
         super();
         capacitateSac = 0;
@@ -32,6 +33,7 @@ public class AspiratorUscat extends Aparat{
         durataBateriei = 0;
         material = "necunoscut";
     }
+    //Constructor cu toti parametri
  public AspiratorUscat(String producator, String model, double pret, String culoare, double greutate,
             double capacitateSac, String tipFiltru , int putereAspirare, int durataBateriei, String material){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
@@ -41,6 +43,7 @@ public class AspiratorUscat extends Aparat{
         this.durataBateriei = durataBateriei;
         this.material = material;
  }
+ //Constructor de copiere
  public AspiratorUscat(AspiratorUscat a){
         super(a);
         this.capacitateSac = a.capacitateSac;
