@@ -11,12 +11,12 @@ import comun.Aparat;
  * @author cc642
  */
 public class Motosapa extends Aparat{
-    String tipAlimentare;
-    String tipPornire;
-    String tipTaiere;
-    String tipManer;
-    int vitezaMaxima;//viteza maxima in RPM
-    double lungime;//lungimea in cm
+    private String tipAlimentare;
+    private String tipPornire;
+    private String tipTaiere;
+    private String tipManer;
+    private int vitezaMaxima;//viteza maxima in RPM
+    private double lungime;//lungimea in cm
     
     //Rescrierea metodei toString
     @Override
@@ -43,7 +43,7 @@ public class Motosapa extends Aparat{
     public Motosapa(String producator, String model, double pret, String culoare, double greutate,
             String tipAlimentare, String tipPornire, String tipTaiere, String tipManer, int vitezaMaxima,
             double lungime){
-        super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
+        super(producator, model, pret, culoare, greutate);//Apeleaza constructorul cu toti parametri din clasa Aparat
         this.tipAlimentare = tipAlimentare;
         this.tipPornire = tipPornire;
         this.tipTaiere = tipTaiere;
@@ -53,7 +53,7 @@ public class Motosapa extends Aparat{
     }
     //Constructor de copiere
     public Motosapa(Motosapa m){
-        super(m);
+        super(m);//Apeleaza constructorul de copiere din clasa Aparat
         this.tipAlimentare = m.tipAlimentare;
         this.tipPornire = m.tipPornire;
         this.tipTaiere = m.tipTaiere;

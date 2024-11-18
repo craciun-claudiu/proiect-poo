@@ -16,7 +16,7 @@ public class MasinaTunsIarba extends Aparat{
     private double putere; //puterea masinii de tuns in cp
     private double latimeTaiere; //latimea pe care o tunde in cm
     private int trepteTaiere; //in cate trepte poate taia
-    double volumCosColector; //volumul cosului de colectare in litri
+    private double volumCosColector; //volumul cosului de colectare in litri
     
     //Rescrierea metodei toString
     @Override
@@ -43,7 +43,7 @@ public class MasinaTunsIarba extends Aparat{
     public MasinaTunsIarba(String producator, String model, double pret, String culoare, double greutate,
             String tipAlimentare, String materialLama, double putere, double latimeTaiere, int trepteTaiere,
             double volumCosColector){
-        super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
+        super(producator, model, pret, culoare, greutate);//Apeleaza constructorul cu toti parametri din clasa Aparat
         this.tipAlimentare = tipAlimentare;
         this.materialLama = materialLama;
         this.putere = putere;
@@ -53,7 +53,7 @@ public class MasinaTunsIarba extends Aparat{
     }
     //Constructor de copiere
     public MasinaTunsIarba(MasinaTunsIarba m){
-        super(m);
+        super(m);//Apeleaza constructorul de copiere din clasa Aparat
         this.tipAlimentare = m.tipAlimentare;
         this.materialLama = m.materialLama;
         this.putere = m.putere;
