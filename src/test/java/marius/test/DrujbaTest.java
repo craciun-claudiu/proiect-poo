@@ -4,6 +4,7 @@
  */
 package marius.test;
 import marius.Drujba;
+import comun.Aparat;
 
 /**
  *
@@ -18,6 +19,10 @@ public class DrujbaTest {
         // TODO code application logic here
         Drujba d = new Drujba();
         System.out.print(d);
+        Drujba drujba1 = new Drujba("Blade Alpin","Wolfson STX-620", 500.00, "rosu", 1.5, 3.0, 50.0, 4, 20, 15);
+        System.out.println(drujba1);
+        Drujba drujba2 = new Drujba(drujba1);
+        System.out.println(drujba2);
     }
     
 }
