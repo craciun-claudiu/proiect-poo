@@ -45,4 +45,14 @@ public class AparatSpalareCuPresiune extends Aparat{
         this.lungimeFurtun =lungimeFurtun;
         this.capacitateRecipientDetergent =capacitateRecipientDetergent;
     }
+    
+    //constructor copiere
+    public AparatSpalareCuPresiune(AparatSpalareCuPresiune a){
+        super(a);
+        this.tipAlimentare =a.tipAlimentare;
+        this.presiuneMaxima =a.presiuneMaxima;
+        this.debitMaxim =a.debitMaxim;
+        this.lungimeFurtun =a.lungimeFurtun;
+        this.capacitateRecipientDetergent =a.capacitateRecipientDetergent;
+    }
 }

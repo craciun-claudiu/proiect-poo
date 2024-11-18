@@ -25,6 +25,9 @@ public class AparatSpalareCuPresiuneTest {
         
         AparatSpalareCuPresiune spalarePresiune1 = new AparatSpalareCuPresiune("Bosch","Universal Aquatak 130", 776.99, "verde,negru", 7.8, "la retea", 130, 380, 6, 0.450);
         System.out.println(spalarePresiune1);
+        
+        faraParametri = spalarePresiune1;
+        System.out.println(faraParametri);
     }
     
 }

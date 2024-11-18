@@ -51,4 +51,15 @@ public class Suflanta extends Aparat{
         this.capacitateAcumulator=capacitateAcumulator;
     }
     
+    //constructor copiere
+    public Suflanta(Suflanta a){
+        super(a);
+        this.tipAlimentare=a.tipAlimentare;
+        this.tipMotor=a.tipMotor;
+        this.numarTrepte=a.numarTrepte;
+        this.putere=a.putere;
+        this.vitezaMaxima=a.vitezaMaxima;
+        this.capacitateAcumulator=a.capacitateAcumulator;
+    }
+    
 }

@@ -24,6 +24,10 @@ public class SuflantaTest {
         Suflanta suflanta1 = new Suflanta("LittleDomi","Suflanta aer fara fir",144.85,"negru",0.500,"acumulator","electric",3,68,74,7500);
         System.out.println(suflanta1);
         
+        faraParametri = suflanta1;
+        System.out.println(faraParametri);
+        
+        
     }
     
 }
