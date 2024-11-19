@@ -18,11 +18,11 @@ public class MasinaTunsIarbaTest {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Aparat aparat = new Aparat("prod","model1",176,"albastru",155.3);
+        Aparat aparat = new Aparat("prod","model1",176,"albastru",155.3f);
         System.out.println(aparat);
         MasinaTunsIarba m = new MasinaTunsIarba();
         System.out.println(m);
-        MasinaTunsIarba masina = new MasinaTunsIarba("Steinhaus","PRO-GLM502",999.99,"rosu",31,"Benzina","Otel",3.5,50,7,60);
+        MasinaTunsIarba masina = new MasinaTunsIarba("Steinhaus","PRO-GLM502",999.99f,"rosu",31,"Benzina","Otel",3.5f,50f,7,60);
         System.out.println(masina);
         MasinaTunsIarba masina2 = new MasinaTunsIarba(masina);
         System.out.println(masina2);

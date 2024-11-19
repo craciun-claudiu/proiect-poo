@@ -11,9 +11,9 @@ package comun;
 public class Aparat {
     private String producator; //producatorul aparatului
     private String model; //modelul aparatului
-    private double pret; //pretul in lei
+    private float pret; //pretul in lei
     private String culoare; //culoarea aparatului
-    private double greutate; //greutatea in kg
+    private float greutate; //greutatea in kg
     
     //Rescrierea metodei toString
     @Override
@@ -33,7 +33,7 @@ public class Aparat {
         this.greutate = 0;
     } 
     //Constructor cu toate argumentele
-    public Aparat(String producator, String model, double pret, String culoare, double greutate){
+    public Aparat(String producator, String model, float pret, String culoare, float greutate){
         this.producator = producator;
         this.model = model;
         this.pret = pret;
@@ -47,5 +47,24 @@ public class Aparat {
         this.pret = ap.pret;
         this.culoare = ap.culoare;
         this.greutate = ap.greutate;
+    }
+    
+    public String getProducator(){
+        return producator;
+    }
+    
+    public String getModel(){
+        return model;
+    }
+    
+    public float getPret(){
+        return pret;
+    }
+    
+    public String getCuloare(){
+        return culoare;
+    }
+    public float getGreutate(){
+        return greutate;
     }
 }

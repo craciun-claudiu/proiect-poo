@@ -16,7 +16,7 @@ public class Motosapa extends Aparat{
     private String tipTaiere;
     private String tipManer;
     private int vitezaMaxima;//viteza maxima in RPM
-    private double lungime;//lungimea in cm
+    private float lungime;//lungimea in cm
     
     //Rescrierea metodei toString
     @Override
@@ -40,9 +40,9 @@ public class Motosapa extends Aparat{
         this.lungime = 0;
     }
     //Constructor cu toti parametrii
-    public Motosapa(String producator, String model, double pret, String culoare, double greutate,
+    public Motosapa(String producator, String model, float pret, String culoare, float greutate,
             String tipAlimentare, String tipPornire, String tipTaiere, String tipManer, int vitezaMaxima,
-            double lungime){
+            float lungime){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul cu toti parametri din clasa Aparat
         this.tipAlimentare = tipAlimentare;
         this.tipPornire = tipPornire;

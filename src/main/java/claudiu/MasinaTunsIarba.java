@@ -5,18 +5,39 @@
 package claudiu;
 
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author cc642
  */
-public class MasinaTunsIarba extends Aparat{
+public class MasinaTunsIarba extends Aparat implements InterfataAparat{
     private String tipAlimentare;
     private String materialLama;
-    private double putere; //puterea masinii de tuns in cp
-    private double latimeTaiere; //latimea pe care o tunde in cm
+    private float putere; //puterea masinii de tuns in cp
+    private float latimeTaiere; //latimea pe care o tunde in cm
     private int trepteTaiere; //in cate trepte poate taia
-    private double volumCosColector; //volumul cosului de colectare in litri
+    private float volumCosColector; //volumul cosului de colectare in litri
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getPret());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getGreutate());
+        System.out.println(tipAlimentare);
+        System.out.println(materialLama);
+        System.out.println(putere);
+        System.out.println(latimeTaiere);
+        System.out.println(trepteTaiere);
+        System.out.println(volumCosColector);
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return this.getPret()/(this.putere * this.volumCosColector);
+    }
     
     //Rescrierea metodei toString
     @Override
@@ -40,9 +61,9 @@ public class MasinaTunsIarba extends Aparat{
         this.volumCosColector = 0;
     }
     //Constructor cu toti parametrii
-    public MasinaTunsIarba(String producator, String model, double pret, String culoare, double greutate,
-            String tipAlimentare, String materialLama, double putere, double latimeTaiere, int trepteTaiere,
-            double volumCosColector){
+    public MasinaTunsIarba(String producator, String model, float pret, String culoare, float greutate,
+            String tipAlimentare, String materialLama, float putere, float latimeTaiere, int trepteTaiere,
+            float volumCosColector){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul cu toti parametri din clasa Aparat
         this.tipAlimentare = tipAlimentare;
         this.materialLama = materialLama;
