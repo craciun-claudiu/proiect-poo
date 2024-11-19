@@ -4,17 +4,28 @@
  */
 package marius;
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author rentamarius
  */
-public class Drujba extends Aparat {
+public class Drujba extends Aparat implements InterfataAparat{
     private double putereMotor;
     private double capacitateCilindrica;
     private int vitezaMaximaRPM;
     private int capacitateRezervor;
     private int capacitateRezervorUlei; 
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        //Ceva comenzi de afisare
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return 0; //Raport dintre pret si un atribut
+    }
     
     @Override
     public String toString(){
@@ -34,7 +45,7 @@ public class Drujba extends Aparat {
         capacitateRezervorUlei = 0;
     }
     //Constructor cu toti parametrii
-    public Drujba(String producator, String model, double pret, String culoare, double greutate,
+    public Drujba(String producator, String model, float pret, String culoare, float greutate,
             double putereMotor, double capacitateCilindrica, int vitezaMaximaRPM, int capacitateRezervor,
             int capacitateRezervorUlei) {
         super(producator, model, pret, culoare, greutate); //Apeleaza constructorul de parametri din clasa Aparat

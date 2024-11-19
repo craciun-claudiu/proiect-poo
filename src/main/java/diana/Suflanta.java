@@ -5,6 +5,7 @@
 package diana;
 import comun.Aparat;
 import comun.InterfataAparat;
+
 /**
  *
  * @author da224
@@ -12,11 +13,21 @@ import comun.InterfataAparat;
 public class Suflanta extends Aparat implements InterfataAparat{
     private String tipAlimentare;
     private String tipMotor;
-    private byte numarTrepte;
+    private int numarTrepte;
     private int putere; //masurata in W
-    private short vitezaMaxima; //masurata in m/s
+    private int vitezaMaxima; //masurata in m/s
     private int capacitateAcumulator; //masurata in mAh
     //private int nivelZgomot; //masurata in dB
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        //Ceva comenzi de afisare
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return 0; //Raport dintre pret si un atribut
+    }
     
     @Override
     public String toString(){
@@ -26,25 +37,6 @@ public class Suflanta extends Aparat implements InterfataAparat{
                 "Putere: "+ putere + " W" + '\n'+
                 "Viteza maxima: "+ vitezaMaxima + " m/s" +'\n'+
                 "Capacitate acumulator: "+ capacitateAcumulator + " mAh" +'\n';
-    }
-    
-    @Override
-    public void afisareAtributeFaraFormatare(){
-        System.out.println(this.getProducator());
-        System.out.println(this.getModel());
-        System.out.println(this.getPret());
-        System.out.println(this.getCuloare());
-        System.out.println(this.getGreutate());
-        System.out.println(tipAlimentare);
-        System.out.println(tipMotor);
-        System.out.println(putere);
-        System.out.println(vitezaMaxima);
-        System.out.println(capacitateAcumulator);
-    }
-    
-    @Override
-    public float raportPretAtribute(){
-        return this.getPret()/(this.putere * this.capacitateAcumulator);
     }
     
     //constructor fara parametri
@@ -60,7 +52,7 @@ public class Suflanta extends Aparat implements InterfataAparat{
     
     //constructor complet 
     public Suflanta(String producator, String model, float pret, String culoare, float greutate,
-            String tipAlimentare, String tipMotor,byte numarTrepte, int putere, short vitezaMaxima, short capacitateAcumulator){
+            String tipAlimentare, String tipMotor,int numarTrepte, int putere, int vitezaMaxima, int capacitateAcumulator){
         super(producator, model, pret, culoare, greutate);
         this.tipAlimentare=tipAlimentare;
         this.tipMotor=tipMotor;

@@ -4,17 +4,28 @@
  */
 package vivi;
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author vh135
  */
-public class AparatCuratatGeamuri extends Aparat {
+public class AparatCuratatGeamuri extends Aparat implements InterfataAparat{
     private String materialLaveta;
     private int numarSenzoriDetectareMargini;
     private float numarZgomot; // nivelul de zgomot în decibeli
     private byte numarModuriCuratare;
     private String tipManevrare; // manual sau automat
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        //Ceva comenzi de afisare
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return 0; //Raport dintre pret si un atribut
+    }
 
     // Rescrierea metodei toString
     @Override

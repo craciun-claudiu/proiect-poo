@@ -4,18 +4,30 @@
  */
 package roxana;
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author rd173
  */
-public class AspiratorUmed extends Aparat {
+public class AspiratorUmed extends Aparat implements InterfataAparat{
     private double capacitateRezervorApa; //litri
     private int nivelZgomot; //in decibeli
     private double lungimeCablu; //metri
     private double lungimeFurtun;
     private boolean utilizareDetergent;
-   
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        //Ceva comenzi de afisare
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return 0; //Raport dintre pret si un atribut
+    }
+    
+   @Override
    public String toString(){
         return super.toString() + "Capacitate rezervor apa: " + capacitateRezervorApa + '\n' +
                 "Nivel zgomot: " + nivelZgomot + '\n' +
@@ -33,7 +45,7 @@ public AspiratorUmed(){
         utilizareDetergent = false;
 }
     //Constructor cu toti parametrii
-    public AspiratorUmed(String producator, String model, double pret, String culoare, double greutate,
+    public AspiratorUmed(String producator, String model, float pret, String culoare, float greutate,
             double capacitateRezervorApa, int nivelZgomot, double lungimeCablu, double lungimeFurtun, boolean utilizareDetergent){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
         this.capacitateRezervorApa = capacitateRezervorApa;

@@ -5,18 +5,39 @@
 package claudiu;
 
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author cc642
  */
-public class Motosapa extends Aparat{
+public class Motosapa extends Aparat implements InterfataAparat{
     private String tipAlimentare;
     private String tipPornire;
     private String tipTaiere;
     private String tipManer;
     private int vitezaMaxima;//viteza maxima in RPM
     private float lungime;//lungimea in cm
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getPret());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getGreutate());
+        System.out.println(tipAlimentare);
+        System.out.println(tipPornire);
+        System.out.println(tipTaiere);
+        System.out.println(tipManer);
+        System.out.println(vitezaMaxima);
+        System.out.println(lungime);
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return this.getPret()/this.vitezaMaxima;
+    }
     
     //Rescrierea metodei toString
     @Override

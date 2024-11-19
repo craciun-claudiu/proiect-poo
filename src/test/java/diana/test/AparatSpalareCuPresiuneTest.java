@@ -17,17 +17,17 @@ public class AparatSpalareCuPresiuneTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Aparat aparat1 = new Aparat("Bosch","Universal Aquatak 130", 776.99, "verde,negru", 7.8);
-        //System.out.println(aparat1);
+        Aparat aparat1 = new Aparat("Bosch","Universal Aquatak 130", 776.99f, "verde,negru", 7.8f);
+        System.out.println(aparat1);
         
-        //AparatSpalareCuPresiune faraParametri = new AparatSpalareCuPresiune();
-        //System.out.println(faraParametri);
+        AparatSpalareCuPresiune faraParametri = new AparatSpalareCuPresiune();
+        System.out.println(faraParametri);
         
-        //AparatSpalareCuPresiune spalarePresiune1 = new AparatSpalareCuPresiune("Bosch","Universal Aquatak 130", 776.99, "verde,negru", 7.8, "la retea", 130, 380, 6, 0.45f);
-        //System.out.println(spalarePresiune1);
+        AparatSpalareCuPresiune spalarePresiune1 = new AparatSpalareCuPresiune("Bosch","Universal Aquatak 130", 776.99f, "verde,negru", 7.8f, "la retea", 130, 380, 6, 0.450f);
+        System.out.println(spalarePresiune1);
         
-        //faraParametri = spalarePresiune1;
-        //System.out.println(faraParametri);
+        faraParametri = spalarePresiune1;
+        System.out.println(faraParametri);
     }
     
 }

@@ -4,17 +4,28 @@
  */
 package marius;
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author rentamarius
  */
-public class Trimmer extends Aparat {
+public class Trimmer extends Aparat implements InterfataAparat{
     public String brand;
     public double latimeLama;
     private int durataBaterie;
     private double durataIncarcare;
     private int numarTrepte;
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        //Ceva comenzi de afisare
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return 0; //Raport dintre pret si un atribut
+    }
     
     //Rescrierea metodei toString
     @Override
@@ -36,7 +47,7 @@ public class Trimmer extends Aparat {
         this.numarTrepte = 0;
     }
     //Constructor cu toti parametrii
-    public Trimmer(String producator, String model, double pret, String culoare, double greutate,
+    public Trimmer(String producator, String model, float pret, String culoare, float greutate,
             String brand, double latimeLama, int durataBaterie, double durataIncarcare, int numarTrepte) {
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul cu toti parametri din clasa Aparat
         this.brand = brand;

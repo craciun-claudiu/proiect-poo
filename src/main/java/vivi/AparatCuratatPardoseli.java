@@ -4,17 +4,28 @@
  */
 package vivi;
 import comun.Aparat;
+import comun.InterfataAparat;
 
 /**
  *
  * @author vh135
  */
-public class AparatCuratatPardoseli extends Aparat {
+public class AparatCuratatPardoseli extends Aparat implements InterfataAparat{
     private String marca;
     private String model;
     private float capacitateBaterie; // capacitate baterie în mAh
     private float capacitateRezervorApa; // capacitatea rezervorului în litri
     private byte putere; // puterea aparatului în W
+    
+    @Override
+    public void  afisareAtributeFaraFormatare(){
+        //Ceva comenzi de afisare
+    }
+    
+    @Override
+    public float raportPretAtribute(){
+        return 0; //Raport dintre pret si un atribut
+    }
 
     // Rescrierea metodei toString
     @Override

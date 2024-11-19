@@ -16,11 +16,11 @@ import vivi.AparatCuratatPardoseli;
      */
  public class AparateTest {
     public static void main(String[] args) {
-        /*// Testarea clasei AparatCuratatPardoseli
+        // Testarea clasei AparatCuratatPardoseli
         AparatCuratatPardoseli pardoseliDefault = new AparatCuratatPardoseli();
         AparatCuratatPardoseli pardoseliParametri = new AparatCuratatPardoseli(
-            "Philips", "PowerClean", 1200.99, "Alb", 8.5,
-            "Philips", "PC2023", 5000, 1.5, 200.0
+            "Philips", "PowerClean", 1200.99f, "Alb", 8.5f,
+            "Philips", "PC2023", 5000, 1.5f, (byte)200
         );
         AparatCuratatPardoseli pardoseliCopie = new AparatCuratatPardoseli(pardoseliParametri);
 
@@ -33,8 +33,8 @@ import vivi.AparatCuratatPardoseli;
         // Testarea clasei AparatCuratatGeamuri
         AparatCuratatGeamuri geamuriDefault = new AparatCuratatGeamuri();
         AparatCuratatGeamuri geamuriParametri = new AparatCuratatGeamuri(
-            "Samsung", "WindowBot", 899.99, "Negru", 3.2,
-            "Microfibră", 4, 50, 3, "Automat"
+            "Samsung", "WindowBot", 899.99f, "Negru", 3.2f,
+            "Microfibră", 4, 50f, (byte)3, "Automat"
         );
         AparatCuratatGeamuri geamuriCopie = new AparatCuratatGeamuri(geamuriParametri);
 
@@ -42,7 +42,7 @@ import vivi.AparatCuratatPardoseli;
         System.out.println("\nTestare AparatCuratatGeamuri");
         System.out.println("Default:\n" + geamuriDefault);
         System.out.println("Cu parametri:\n" + geamuriParametri);
-        System.out.println("Copie:\n" + geamuriCopie);*/
+        System.out.println("Copie:\n" + geamuriCopie);
         
     }
 }
