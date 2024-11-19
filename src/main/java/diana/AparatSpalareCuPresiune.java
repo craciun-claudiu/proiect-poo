@@ -11,12 +11,12 @@ import comun.Aparat;
  */
 public class AparatSpalareCuPresiune extends Aparat{
     private String tipAlimentare;
-    private int presiuneMaxima;//masurata in bar
-    private int debitMaxim;//masurata in l/h
-    private int lungimeFurtun;//masurat in m
-    private double capacitateRecipientDetergent;//masurat in l
+    private short presiuneMaxima;//masurata in bar
+    private short debitMaxim;//masurata in l/h
+    private short lungimeFurtun;//masurat in m
+    private float capacitateRecipientDetergent;//masurat in l
     
-     @Override
+    @Override
     public String toString(){
         return super.toString() + "Tip alimentare: "+ tipAlimentare +'\n' +
                 "Presiune maxima: "+ presiuneMaxima +" bar" +'\n'+
@@ -36,8 +36,8 @@ public class AparatSpalareCuPresiune extends Aparat{
     }
     
     //constructor complet
-    public AparatSpalareCuPresiune(String producator, String model, double pret, String culoare, double greutate,
-            String tipAlimentare, int presiuneMaxima, int debitMaxim, int lungimeCablu, double capacitateRecipientDetergent){
+    public AparatSpalareCuPresiune(String producator, String model, float pret, String culoare, float greutate,
+            String tipAlimentare, short presiuneMaxima, short debitMaxim, short lungimeCablu, float capacitateRecipientDetergent){
         super(producator, model, pret, culoare, greutate);
         this.tipAlimentare =tipAlimentare;
         this.presiuneMaxima =presiuneMaxima;
