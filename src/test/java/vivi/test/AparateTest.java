@@ -16,7 +16,7 @@ import vivi.AparatCuratatPardoseli;
      */
  public class AparateTest {
     public static void main(String[] args) {
-        // Testarea clasei AparatCuratatPardoseli
+        /*// Testarea clasei AparatCuratatPardoseli
         AparatCuratatPardoseli pardoseliDefault = new AparatCuratatPardoseli();
         AparatCuratatPardoseli pardoseliParametri = new AparatCuratatPardoseli(
             "Philips", "PowerClean", 1200.99, "Alb", 8.5,
@@ -42,6 +42,7 @@ import vivi.AparatCuratatPardoseli;
         System.out.println("\nTestare AparatCuratatGeamuri");
         System.out.println("Default:\n" + geamuriDefault);
         System.out.println("Cu parametri:\n" + geamuriParametri);
-        System.out.println("Copie:\n" + geamuriCopie);
+        System.out.println("Copie:\n" + geamuriCopie);*/
+        
     }
 }

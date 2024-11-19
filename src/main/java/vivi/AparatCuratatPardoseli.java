@@ -12,9 +12,9 @@ import comun.Aparat;
 public class AparatCuratatPardoseli extends Aparat {
     private String marca;
     private String model;
-    private int capacitateBaterie; // capacitate baterie în mAh
-    private double capacitateRezervorApa; // capacitatea rezervorului în litri
-    private double putere; // puterea aparatului în W
+    private float capacitateBaterie; // capacitate baterie în mAh
+    private float capacitateRezervorApa; // capacitatea rezervorului în litri
+    private byte putere; // puterea aparatului în W
 
     // Rescrierea metodei toString
     @Override
@@ -33,14 +33,14 @@ public class AparatCuratatPardoseli extends Aparat {
         this.marca = "Necunoscut";
         this.model = "Necunoscut";
         this.capacitateBaterie = 0;
-        this.capacitateRezervorApa = 0.0;
-        this.putere = 0.0;
+        this.capacitateRezervorApa = 0.0f;
+        this.putere = 0;
     }
 
     // Constructor cu toți parametrii
-    public AparatCuratatPardoseli(String producator, String model, double pret, String culoare, double greutate,
-                                  String marca, String modelSpecific, int capacitateBaterie, 
-                                  double capacitateRezervorApa, double putere) {
+    public AparatCuratatPardoseli(String producator, String model, float pret, String culoare, float greutate,
+                                  String marca, String modelSpecific, float capacitateBaterie, 
+                                  float capacitateRezervorApa, byte putere) {
         super(producator, model, pret, culoare, greutate); // Apelează constructorul cu parametri din clasa Aparat
         this.marca = marca;
         this.model = modelSpecific;

@@ -12,8 +12,8 @@ import comun.Aparat;
 public class AparatCuratatGeamuri extends Aparat {
     private String materialLaveta;
     private int numarSenzoriDetectareMargini;
-    private int numarZgomot; // nivelul de zgomot în decibeli
-    private int numarModuriCuratare;
+    private float numarZgomot; // nivelul de zgomot în decibeli
+    private byte numarModuriCuratare;
     private String tipManevrare; // manual sau automat
 
     // Rescrierea metodei toString
@@ -38,9 +38,9 @@ public class AparatCuratatGeamuri extends Aparat {
     }
 
     // Constructor cu toți parametrii
-    public AparatCuratatGeamuri(String producator, String model, double pret, String culoare, double greutate,
-                                String materialLaveta, int numarSenzoriDetectareMargini, int numarZgomot,
-                                int numarModuriCuratare, String tipManevrare) {
+    public AparatCuratatGeamuri(String producator, String model, float pret, String culoare, float greutate,
+                                String materialLaveta, int numarSenzoriDetectareMargini, float numarZgomot,
+                                byte numarModuriCuratare, String tipManevrare) {
         super(producator, model, pret, culoare, greutate); // Apelează constructorul cu parametri din clasa Aparat
         this.materialLaveta = materialLaveta;
         this.numarSenzoriDetectareMargini = numarSenzoriDetectareMargini;
