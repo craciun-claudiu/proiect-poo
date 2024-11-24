@@ -81,5 +81,48 @@ public class Motosapa extends Aparat implements InterfataAparat{
         this.tipManer = m.tipManer;
         this.vitezaMaxima = m.vitezaMaxima;
         this.lungime = m.lungime;
-    }    
+    }   
+    
+    public String getTipAlimentare() {
+        return tipAlimentare;
+    }
+    public void setTipAlimentare(String tipAlimentare) {
+        this.tipAlimentare = tipAlimentare;
+    }
+
+    public String getTipPornire() {
+        return tipPornire;
+    }
+    public void setTipPornire(String tipPornire) {
+        this.tipPornire = tipPornire;
+    }
+
+    public String getTipTaiere() {
+        return tipTaiere;
+    }
+    public void setTipTaiere(String tipTaiere) {
+        this.tipTaiere = tipTaiere;
+    }
+
+    public String getTipManer() {
+        return tipManer;
+    }
+    public void setTipManer(String tipManer) {
+        this.tipManer = tipManer;
+    }
+
+    public int getVitezaMaxima() {
+        return vitezaMaxima;
+    }
+    public void setVitezaMaxima(int vitezaMaxima) {
+        this.vitezaMaxima = vitezaMaxima;
+    }
+
+    public float getLungime() {
+        return lungime;
+    }
+    public void setLungime(float lungime) {
+        this.lungime = lungime;
+}   
+
 }

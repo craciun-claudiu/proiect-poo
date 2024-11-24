@@ -52,19 +52,35 @@ public class Aparat {
     public String getProducator(){
         return producator;
     }
+    public void setProducator(String producator){
+        this.producator = producator;
+    }
     
     public String getModel(){
         return model;
+    }
+    public void setModel(String model){
+        this.model = model;
     }
     
     public float getPret(){
         return pret;
     }
+    public void setPret(float pret){
+        this.pret = pret;
+    }
     
     public String getCuloare(){
         return culoare;
     }
+    public void setCuloare(String culoare){
+        this.culoare = culoare;
+    }
+    
     public float getGreutate(){
         return greutate;
+    }
+    public void setGreutate(float greutate){
+        this.greutate = greutate;
     }
 }

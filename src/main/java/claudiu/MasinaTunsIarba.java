@@ -81,5 +81,50 @@ public class MasinaTunsIarba extends Aparat implements InterfataAparat{
         this.latimeTaiere = m.latimeTaiere;
         this.trepteTaiere = m.trepteTaiere;
         this.volumCosColector = m.volumCosColector;
-    }    
+    }  
+    
+    public String getTipAlimentare() {
+        return tipAlimentare;
+    }
+    public void setTipAlimentare(String tipAlimentare) {
+        this.tipAlimentare = tipAlimentare;
+    }
+    
+    
+    public String getMaterialLama() {
+        return materialLama;
+    }
+    public void setMaterialLama(String materialLama) {
+        this.materialLama = materialLama;
+    }
+
+    public float getPutere() {
+        return putere;
+    }
+    public void setPutere(float putere) {
+        this.putere = putere;
+    }
+
+    public float getLatimeTaiere() {
+        return latimeTaiere;
+    }
+    public void setLatimeTaiere(float latimeTaiere) {
+        this.latimeTaiere = latimeTaiere;
+    }
+
+    public int getTrepteTaiere() {
+        return trepteTaiere;
+    }
+    public void setTrepteTaiere(int trepteTaiere) {
+        this.trepteTaiere = trepteTaiere;
+    }
+
+    public float getVolumCosColector() {
+        return volumCosColector;
+    }
+    public void setVolumCosColector(float volumCosColector) {
+        this.volumCosColector = volumCosColector;
+    }
+    
+    
 }
