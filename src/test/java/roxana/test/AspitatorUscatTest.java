@@ -13,11 +13,13 @@ import comun.Aparat;
  */
 public class AspitatorUscatTest {
     public static void main(String[] args){
+        Aparat aparat = new Aparat("prod","model",150,"verde",130.5f);
+        System.out.println(aparat);
         AspiratorUscat asp = new AspiratorUscat();
         System.out.print(asp);
-        AspiratorUscat asp2 = new AspiratorUscat("Samsung", "vertical", 550, "albastru", 6, 4.2, "carbon", 190, 60, "plastic");
+        AspiratorUscat asp2 = new AspiratorUscat("Samsung", "vertical", 500, "alb", 5.5f, 4.4f, "HEPA", 190, 60, "plastic");
         System.out.print(asp2);
-        AspiratorUscat asp3 = new AspiratorUscat("Bosh", "vertical", 640, "negru", 5, 3.5, "HERA", 220, 45, "metal");
+        AspiratorUscat asp3 = new AspiratorUscat("Beko", "vertical",600, "negru",6.7f, 3.5f, "HERA", 220, 45, "metal");
         System.out.print(asp3);
     }
     

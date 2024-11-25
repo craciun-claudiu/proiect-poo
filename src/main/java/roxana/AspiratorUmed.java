@@ -11,10 +11,10 @@ import comun.InterfataAparat;
  * @author rd173
  */
 public class AspiratorUmed extends Aparat implements InterfataAparat{
-    private double capacitateRezervorApa; //litri
+    private float capacitateRezervorApa; //litri
     private int nivelZgomot; //in decibeli
-    private double lungimeCablu; //metri
-    private double lungimeFurtun;
+    private float lungimeCablu; //metri
+    private float lungimeFurtun;
     private boolean utilizareDetergent;
     
     @Override
@@ -46,7 +46,7 @@ public AspiratorUmed(){
 }
     //Constructor cu toti parametrii
     public AspiratorUmed(String producator, String model, float pret, String culoare, float greutate,
-            double capacitateRezervorApa, int nivelZgomot, double lungimeCablu, double lungimeFurtun, boolean utilizareDetergent){
+            float capacitateRezervorApa, int nivelZgomot, float lungimeCablu, float lungimeFurtun, boolean utilizareDetergent){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
         this.capacitateRezervorApa = capacitateRezervorApa;
         this.nivelZgomot = nivelZgomot;
@@ -64,3 +64,5 @@ public AspiratorUmed(){
         this.utilizareDetergent = a.utilizareDetergent;
     }  
 }
+
+

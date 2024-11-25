@@ -11,7 +11,7 @@ import comun.InterfataAparat;
  * @author rd173
  */
 public class AspiratorUscat extends Aparat implements InterfataAparat{
-    private double capacitateSac;
+    private float capacitateSac;
     private String tipFiltru;
     private int putereAspirare;
     private int durataBateriei; //minute
@@ -48,7 +48,7 @@ public class AspiratorUscat extends Aparat implements InterfataAparat{
     }
     //Constructor cu toti parametri
  public AspiratorUscat(String producator, String model, float pret, String culoare, float greutate,
-            double capacitateSac, String tipFiltru , int putereAspirare, int durataBateriei, String material){
+            float capacitateSac, String tipFiltru , int putereAspirare, int durataBateriei, String material){
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul de parametri din clasa Aparat
         this.capacitateSac = capacitateSac;
         this.tipFiltru = tipFiltru;
