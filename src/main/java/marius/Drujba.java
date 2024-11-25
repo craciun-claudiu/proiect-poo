@@ -11,8 +11,8 @@ import comun.InterfataAparat;
  * @author rentamarius
  */
 public class Drujba extends Aparat implements InterfataAparat{
-    private double putereMotor;
-    private double capacitateCilindrica;
+    private float putereMotor;
+    private float capacitateCilindrica;
     private int vitezaMaximaRPM;
     private int capacitateRezervor;
     private int capacitateRezervorUlei; 
@@ -20,11 +20,21 @@ public class Drujba extends Aparat implements InterfataAparat{
     @Override
     public void  afisareAtributeFaraFormatare(){
         //Ceva comenzi de afisare
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getPret());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getGreutate());
+        System.out.println(putereMotor);
+        System.out.println(capacitateCilindrica);
+        System.out.println(vitezaMaximaRPM);
+        System.out.println(capacitateRezervor);
+        System.out.println(capacitateRezervorUlei);
     }
     
     @Override
     public float raportPretAtribute(){
-        return 0; //Raport dintre pret si un atribut
+        return (this.getPret() / (this.putereMotor * this.capacitateCilindrica)); //Raport dintre pret si un atribut
     }
     
     @Override
@@ -46,7 +56,7 @@ public class Drujba extends Aparat implements InterfataAparat{
     }
     //Constructor cu toti parametrii
     public Drujba(String producator, String model, float pret, String culoare, float greutate,
-            double putereMotor, double capacitateCilindrica, int vitezaMaximaRPM, int capacitateRezervor,
+            float putereMotor, float capacitateCilindrica, int vitezaMaximaRPM, int capacitateRezervor,
             int capacitateRezervorUlei) {
         super(producator, model, pret, culoare, greutate); //Apeleaza constructorul de parametri din clasa Aparat
         this.putereMotor = putereMotor;
@@ -63,6 +73,42 @@ public class Drujba extends Aparat implements InterfataAparat{
         this.vitezaMaximaRPM = m.vitezaMaximaRPM;
         this.capacitateRezervor = m.capacitateRezervor;
         this.capacitateRezervorUlei = m.capacitateRezervorUlei;
-    }    
+    }
+
+     public float getputereMotor() {
+        return putereMotor;
+    }
+    public void setputereMotor(float putereMotor) {
+        this.putereMotor = putereMotor;
+    }
+    
+    
+    public float getcapacitateCilindrica() {
+        return capacitateCilindrica;
+    }
+    public void setcapacitateCilindrica(float capacitateCilindrica) {
+        this.capacitateCilindrica = capacitateCilindrica;
+    }
+
+    public int getvitezaMaximaRPM() {
+        return vitezaMaximaRPM;
+    }
+    public void setvitezaMaximaRPM(int vitezaMaximaRPM) {
+        this.vitezaMaximaRPM = vitezaMaximaRPM;
+    }
+
+    public int getcapacitateRezervor() {
+        return capacitateRezervor;
+    }
+    public void setLatimeTaiere(int capacitateRezervor) {
+       this.capacitateRezervor = capacitateRezervor;
+    }
+
+   public int getcapacitateRezervorUlei() {
+        return capacitateRezervorUlei;
+    }
+    public void setcapacitateRezervorUlei(int capacitateRezervorUlei) {
+        this.capacitateRezervorUlei = capacitateRezervorUlei;
+    }  
 }
 

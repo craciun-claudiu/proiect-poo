@@ -12,19 +12,29 @@ import comun.InterfataAparat;
  */
 public class Trimmer extends Aparat implements InterfataAparat{
     public String brand;
-    public double latimeLama;
+    public float latimeLama;
     private int durataBaterie;
-    private double durataIncarcare;
+    private float durataIncarcare;
     private int numarTrepte;
     
     @Override
     public void  afisareAtributeFaraFormatare(){
         //Ceva comenzi de afisare
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getPret());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getGreutate());
+        System.out.println(brand);
+        System.out.println(latimeLama);
+        System.out.println(durataBaterie);
+        System.out.println(durataIncarcare);
+        System.out.println(numarTrepte);
     }
     
     @Override
     public float raportPretAtribute(){
-        return 0; //Raport dintre pret si un atribut
+        return (this.getPret() / (this.latimeLama * this.durataIncarcare)); //Raport dintre pret si un atribut
     }
     
     //Rescrierea metodei toString
@@ -48,7 +58,7 @@ public class Trimmer extends Aparat implements InterfataAparat{
     }
     //Constructor cu toti parametrii
     public Trimmer(String producator, String model, float pret, String culoare, float greutate,
-            String brand, double latimeLama, int durataBaterie, double durataIncarcare, int numarTrepte) {
+            String brand, float latimeLama, int durataBaterie, float durataIncarcare, int numarTrepte) {
         super(producator, model, pret, culoare, greutate);//Apeleaza constructorul cu toti parametri din clasa Aparat
         this.brand = brand;
         this.latimeLama = latimeLama;
@@ -64,5 +74,41 @@ public class Trimmer extends Aparat implements InterfataAparat{
         this.durataBaterie = m.durataBaterie;
         this.durataIncarcare = m.durataIncarcare;
         this.numarTrepte = m.numarTrepte;
-    }    
+    }
+
+    public String brand() {
+        return brand;
+    }
+    public void setbrand(String brand) {
+        this.brand = brand;
+    }
+    
+    
+    public float getlatimeLama() {
+        return latimeLama;
+    }
+    public void setlatimeLama(float latimeLama) {
+        this.latimeLama = latimeLama;
+    }
+
+    public int getdurataBaterie() {
+        return durataBaterie;
+    }
+    public void setdurataBaterie(int durataBaterie) {
+        this.durataBaterie = durataBaterie;
+    }
+
+    public float getdurataIncarcare() {
+        return durataIncarcare;
+    }
+    public void setdurataIncarcare(float durataIncarcare) {
+       this.durataIncarcare = durataIncarcare;
+    }
+
+   public int getnumarTrepte() {
+        return numarTrepte;
+    }
+    public void setnumarTrepte(int numarTrepte) {
+        this.numarTrepte = numarTrepte;
+    }  
 }

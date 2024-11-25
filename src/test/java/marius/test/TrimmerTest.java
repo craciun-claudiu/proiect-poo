@@ -19,7 +19,7 @@ public class TrimmerTest {
         // TODO code application logic here
         Trimmer t = new Trimmer();
         System.out.print(t);
-        Trimmer t2 = new Trimmer("Bosch" , "Modelul bun", 18.2f, "albastru", 30, "Phillips", 10.5, 2, 8, 4);
+        Trimmer t2 = new Trimmer("Bosch" , "Modelul bun", 18.2f, "albastru", 30, "Phillips", 10.5f, 2, 8f, 4);
         System.out.println(t2);
         Trimmer t3 = new Trimmer(t2);
         System.out.println(t3);
