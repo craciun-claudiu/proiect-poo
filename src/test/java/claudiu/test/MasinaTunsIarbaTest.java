@@ -6,8 +6,6 @@ package claudiu.test;
 
 import claudiu.MasinaTunsIarba;
 import comun.Aparat;
-import java.io.*;
-import java.util.*;
 
 /**
  *
@@ -28,6 +26,21 @@ public class MasinaTunsIarbaTest {
         Aparat aparat3 = new Aparat(aparat);
         System.out.println(aparat3);
         
+        Aparat[] aparate = new Aparat[10];
+        aparate[0] = new Aparat("Honda", "HRX2VKA", 2500, "Roșu", 42);
+        aparate[1] = new Aparat("Bosch", "Rotak 4", 400, "Verde", 6.8f);
+        aparate[2] = new Aparat("Husqvarna", "LC 33", 3900, "Portocaliu", 26);
+        aparate[3] = new Aparat("Makita", "DLM", 2400, "Albastru", 15);
+        aparate[4] = new Aparat("Stihl", "RMA 4", 1300, "Alb cu portocaliu", 21);
+        aparate[5] = new Aparat("Greenworks", "GGX1", 1500, "Verde", 18);
+        aparate[6] = new Aparat("AL-KO", "Classic 4.66", 2700, "Roșu cu negru", 27);
+        aparate[7] = new Aparat("Einhell", "GE-CM 36/47", 1000, "Roșu cu negru", 25);
+        aparate[8] = new Aparat("Flymo", "Hover", 1600, "Portocaliu cu gri", 5.5f);
+        aparate[9] = new Aparat("Wolf-Garten", "A 120", 2000, "Roșu cu galben", 35);
+        
+        for(int i = 0 ; i < 10 ; i++){
+            System.out.println(aparate[i]);
+        }
         
         MasinaTunsIarba m = new MasinaTunsIarba();
         System.out.println(m);
