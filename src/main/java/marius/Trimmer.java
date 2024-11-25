@@ -76,7 +76,7 @@ public class Trimmer extends Aparat implements InterfataAparat{
         this.numarTrepte = m.numarTrepte;
     }
 
-    public String brand() {
+    public String getbrand() {
         return brand;
     }
     public void setbrand(String brand) {
