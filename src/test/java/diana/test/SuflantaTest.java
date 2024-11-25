@@ -18,16 +18,27 @@ public class SuflantaTest {
         Aparat aparat1 = new Aparat("LittleDomi","Suflanta aer fara fir",144.85f,"negru",0.500f);
         System.out.println(aparat1);
         
-        Suflanta faraParametri = new Suflanta();
-        System.out.println(faraParametri);
+        Suflanta[] s = new Suflanta[10];
+        s[0] = new Suflanta("LittleDomi", "Suflanta aer fara fir", 144.85f, "negru", 0.500f, "acumulator", "electric", (byte) 3, (byte) 68, (short) 74, 7500);
+        s[1] = new Suflanta("Steinhaus", "PRO-BL3000", 179.99f, "negru, rosu", 0.650f, "la retea", "electric", (byte) 6, (byte) 120, (short) 92, 9000);
+        s[2] = new Suflanta("Goxawee", "M7057", 189.98f, "negru, portocaliu", 0.716f, "acumulator", "electric", (byte) 3, (byte) 120, (short) 150, 8500);
+        s[3] = new Suflanta("Heinner", "VSAF002", 209.99f, "negru, verde", 0.690f, "la retea", "electric", (byte) 4, (byte) 90, (short) 84, 8000);
+        s[4] = new Suflanta("Bosch", "GSA18V", 259.99f, "albastru, negru", 0.800f, "acumulator", "electric", (byte) 2, (byte) 150, (short) 100, 10000);
+        s[5] = new Suflanta("Makita", "UB1103", 239.95f, "albastru", 0.600f, "la retea", "electric", (byte) 3, (byte) 600, (short) 75, 9500);
+        s[6] = new Suflanta("Black+Decker", "BV6600", 289.99f, "negru, rosu", 0.900f, "acumulator", "electric", (byte) 4, (byte) 400, (short) 95, 12000);
+        s[7] = new Suflanta("DeWalt", "DCE100B", 219.99f, "galben, negru", 0.650f, "acumulator", "electric", (byte) 3, (byte) 180, (short) 82, 8500);
+        s[8] = new Suflanta("Ryobi", "RY40440", 279.99f, "verde, negru", 0.750f, "acumulator", "electric", (byte) 5, (byte) 320, (short) 88, 11000);
+        s[9] = new Suflanta("Einhell", "TE-CB18/180", 149.99f, "rosu, negru", 0.550f, "acumulator", "electric", (byte) 2, (byte) 180, (short) 60, 7800);
+
+        for(int i=0; i<10; i++)
+            System.out.println(s[i]);
         
-        Suflanta suflanta1 = new Suflanta("LittleDomi","Suflanta aer fara fir",144.85f,"negru",0.500f,"acumulator","electric",3,68,74,7500);
-        System.out.println(suflanta1);
-        
-        faraParametri = suflanta1;
-        System.out.println(faraParametri);
-        
-        
+        Suflanta test = new Suflanta();
+        System.out.println(test);
+        test=s[4];
+        System.out.println(test);
+        test.setVitezaMaxima((short) 11111);
+        System.out.println(test.getVitezaMaxima());
     }
     
 }

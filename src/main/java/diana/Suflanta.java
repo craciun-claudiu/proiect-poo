@@ -13,9 +13,9 @@ import comun.InterfataAparat;
 public class Suflanta extends Aparat implements InterfataAparat{
     private String tipAlimentare;
     private String tipMotor;
-    private int numarTrepte;
-    private int putere; //masurata in W
-    private int vitezaMaxima; //masurata in m/s
+    private byte numarTrepte;
+    private byte putere; //masurata in W
+    private short vitezaMaxima; //masurata in m/s
     private int capacitateAcumulator; //masurata in mAh
     //private int nivelZgomot; //masurata in dB
     
@@ -51,8 +51,8 @@ public class Suflanta extends Aparat implements InterfataAparat{
     }
     
     //constructor complet 
-    public Suflanta(String producator, String model, float pret, String culoare, float greutate,
-            String tipAlimentare, String tipMotor,int numarTrepte, int putere, int vitezaMaxima, int capacitateAcumulator){
+    public Suflanta(String producator, String model, float pret, String culoare, float greutate, 
+            String tipAlimentare, String tipMotor, byte numarTrepte, byte putere, short vitezaMaxima, int capacitateAcumulator){
         super(producator, model, pret, culoare, greutate);
         this.tipAlimentare=tipAlimentare;
         this.tipMotor=tipMotor;
@@ -71,6 +71,55 @@ public class Suflanta extends Aparat implements InterfataAparat{
         this.putere=a.putere;
         this.vitezaMaxima=a.vitezaMaxima;
         this.capacitateAcumulator=a.capacitateAcumulator;
+    }
+    
+    //getteri si setteri
+    public String getTipAlimentare(){
+        return tipAlimentare;
+    }
+    
+    public void setTipAlimentare(String tipAlimentare){
+        this.tipAlimentare = tipAlimentare;
+    }
+    
+    public String getTipMotor(){
+        return tipMotor;
+    }
+    
+    public void setTipMotor(String tipMotor){
+        this.tipMotor = tipMotor;
+    }
+    
+    public byte getNumarTrepte(){
+        return numarTrepte;
+    }
+    
+    public void setNumarTrepte(byte numarTrepte){
+        this.numarTrepte = numarTrepte;
+    }
+    
+    public byte getPutere(){
+        return putere;
+    }
+    
+    public void setPutere(byte putere){
+        this.putere = putere;
+    }
+    
+    public short getVitezaMaxima(){
+        return vitezaMaxima;
+    }
+    
+    public void setVitezaMaxima(short vitezaMaxima){
+        this.vitezaMaxima = vitezaMaxima;
+    }
+    
+    public int getCapacitateAcumulator(){
+        return capacitateAcumulator;
+    }
+    
+    public void setCapacitateAcumulator(int capacitateAcumulator){
+        this.capacitateAcumulator = capacitateAcumulator;
     }
     
 }

@@ -12,9 +12,9 @@ import comun.InterfataAparat;
  */
 public class AparatSpalareCuPresiune extends Aparat implements InterfataAparat{
     private String tipAlimentare;
-    private int presiuneMaxima;//masurata in bar
-    private int debitMaxim;//masurata in l/h
-    private int lungimeFurtun;//masurat in m
+    private short presiuneMaxima;//masurata in bar
+    private short debitMaxim;//masurata in l/h
+    private byte lungimeFurtun;//masurat in m
     private float capacitateRecipientDetergent;//masurat in l
     
     @Override
@@ -48,7 +48,7 @@ public class AparatSpalareCuPresiune extends Aparat implements InterfataAparat{
     
     //constructor complet
     public AparatSpalareCuPresiune(String producator, String model, float pret, String culoare, float greutate,
-            String tipAlimentare, int presiuneMaxima, int debitMaxim, int lungimeCablu, float capacitateRecipientDetergent){
+            String tipAlimentare, short presiuneMaxima, short debitMaxim, byte lungimeCablu, float capacitateRecipientDetergent){
         super(producator, model, pret, culoare, greutate);
         this.tipAlimentare =tipAlimentare;
         this.presiuneMaxima =presiuneMaxima;
@@ -66,4 +66,46 @@ public class AparatSpalareCuPresiune extends Aparat implements InterfataAparat{
         this.lungimeFurtun =a.lungimeFurtun;
         this.capacitateRecipientDetergent =a.capacitateRecipientDetergent;
     }
+    
+    //setteri si getteri
+    public String getTipAlimentare(){
+        return tipAlimentare;
+    }
+    
+    public void setTipAlimentare(String tipAlimentare){
+        this.tipAlimentare = tipAlimentare;
+    }
+    
+    public short getPresiuneMaxima(){
+        return presiuneMaxima;
+    }
+    
+    public void setPresiuneMaxima(short presiuneMaxima){
+        this.presiuneMaxima = presiuneMaxima;
+    }
+    
+    public short getDebitMaxim(){
+        return debitMaxim;
+    }
+    
+    public void setDebitMaxim(short debitMaxim){
+        this.debitMaxim = debitMaxim;
+    }
+    
+    public byte getLungimeFurtun(){
+        return lungimeFurtun;
+    }
+    
+    public void setLungimeFurtun(byte lungimeFurtun){
+        this.lungimeFurtun = lungimeFurtun;
+    }
+    
+    public float getCapacitateRecipientDetergent(){
+        return capacitateRecipientDetergent;
+    }
+    
+    public void setCapacitateRecipientDetergent(float capacitateRecipientDetergent){
+        this.capacitateRecipientDetergent = capacitateRecipientDetergent;
+    }
+    
 }
