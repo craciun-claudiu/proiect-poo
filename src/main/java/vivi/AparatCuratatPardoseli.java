@@ -10,27 +10,36 @@ import comun.InterfataAparat;
  *
  * @author vh135
  */
-public class AparatCuratatPardoseli extends Aparat implements InterfataAparat{
+public class AparatCuratatPardoseli extends Aparat implements InterfataAparat {
     private String marca;
     private String model;
     private float capacitateBaterie; // capacitate baterie în mAh
     private float capacitateRezervorApa; // capacitatea rezervorului în litri
     private byte putere; // puterea aparatului în W
-    
+
     @Override
-    public void  afisareAtributeFaraFormatare(){
-        //Ceva comenzi de afisare
+    public void afisareAtributeFaraFormatare() {
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getPret());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getGreutate());
+        System.out.println(marca);
+        System.out.println(model);
+        System.out.println(capacitateBaterie);
+        System.out.println(capacitateRezervorApa);
+        System.out.println(putere);
     }
-    
+
     @Override
-    public float raportPretAtribute(){
-        return 0; //Raport dintre pret si un atribut
+    public float raportPretAtribute() {
+        return this.getPret() / (this.capacitateBaterie * this.capacitateRezervorApa);
     }
 
     // Rescrierea metodei toString
     @Override
     public String toString() {
-        return super.toString() + 
+        return super.toString() +
                "Marcă: " + marca + '\n' +
                "Model: " + model + '\n' +
                "Capacitate baterie: " + capacitateBaterie + " mAh" + '\n' +
@@ -68,5 +77,46 @@ public class AparatCuratatPardoseli extends Aparat implements InterfataAparat{
         this.capacitateBaterie = a.capacitateBaterie;
         this.capacitateRezervorApa = a.capacitateRezervorApa;
         this.putere = a.putere;
+    }
+
+    // Getteri și setteri
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelSpecific() {
+        return model;
+    }
+
+    public void setModelSpecific(String model) {
+        this.model = model;
+    }
+
+    public float getCapacitateBaterie() {
+        return capacitateBaterie;
+    }
+
+    public void setCapacitateBaterie(float capacitateBaterie) {
+        this.capacitateBaterie = capacitateBaterie;
+    }
+
+    public float getCapacitateRezervorApa() {
+        return capacitateRezervorApa;
+    }
+
+    public void setCapacitateRezervorApa(float capacitateRezervorApa) {
+        this.capacitateRezervorApa = capacitateRezervorApa;
+    }
+
+    public byte getPutere() {
+        return putere;
+    }
+
+    public void setPutere(byte putere) {
+        this.putere = putere;
     }
 }
