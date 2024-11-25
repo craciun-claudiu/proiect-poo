@@ -19,12 +19,22 @@ public class AspiratorUmed extends Aparat implements InterfataAparat{
     
     @Override
     public void  afisareAtributeFaraFormatare(){
-        //Ceva comenzi de afisare
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getPret());
+        System.out.println(this.getGreutate());
+        System.out.println(capacitateRezervorApa);
+        System.out.println(nivelZgomot);
+        System.out.println(lungimeCablu);
+        System.out.println(lungimeFurtun);
+        System.out.println(utilizareDetergent);
+        
     }
     
     @Override
     public float raportPretAtribute(){
-        return 0; //Raport dintre pret si un atribut
+        return this.getPret()/(this.lungimeCablu * this.lungimeFurtun);
     }
     
    @Override
@@ -63,6 +73,49 @@ public AspiratorUmed(){
         this.lungimeFurtun = a.lungimeFurtun;
         this.utilizareDetergent = a.utilizareDetergent;
     }  
+    
+    
+    public float getcapacitateRezervorApa(){
+        return capacitateRezervorApa;
+    }
+    
+    public void setcapacitatRezervorApa(float capacitateRezervoraApa){
+        this.capacitateRezervorApa = capacitateRezervorApa;
+    }
+    
+    public int getnivelZgomot(){
+        return nivelZgomot;
+    }
+    
+    public void setnivelZgomot (int nivelZgomot){
+        this.nivelZgomot = nivelZgomot;
+    }
+    
+    public float getlungimeCablu(){
+        return lungimeCablu;
+    }
+    
+    public void setlungimeCablu(float lungimeCablu){
+        this.lungimeCablu = lungimeCablu;
+    }
+    
+    public float getlungimeFurtun(){
+        return lungimeFurtun;
+    }
+    
+    public void setlungimeFurtun( float lungimeFurtun){
+        this.lungimeFurtun = lungimeFurtun;
+    }
+    
+    public boolean getutilizareDetergent(){
+        return utilizareDetergent;
+    }
+    
+    public void setutilizareDetergent (boolean utilizareDetergent){
+        this.utilizareDetergent = utilizareDetergent;
+    }
 }
+
+
 
 

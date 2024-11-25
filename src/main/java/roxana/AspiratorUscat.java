@@ -19,12 +19,24 @@ public class AspiratorUscat extends Aparat implements InterfataAparat{
     
     @Override
     public void  afisareAtributeFaraFormatare(){
-        //Ceva comenzi de afisare
+        System.out.println(this.getProducator());
+        System.out.println(this.getModel());
+        System.out.println(this.getPret());
+        System.out.println(this.getCuloare());
+        System.out.println(this.getGreutate());
+        System.out.println(capacitateSac);
+        System.out.println(tipFiltru);
+        System.out.println(putereAspirare);
+        System.out.println(durataBateriei);
+        System.out.println(material);
+        
+        
+        
     }
     
     @Override
     public float raportPretAtribute(){
-        return 0; //Raport dintre pret si un atribut
+        return this.getPret()/(this.putereAspirare * this.durataBateriei); 
     }
     
     
@@ -64,5 +76,40 @@ public class AspiratorUscat extends Aparat implements InterfataAparat{
         this.putereAspirare = a.putereAspirare;
         this.durataBateriei = a.durataBateriei;
         this.material = a.material;
-    }    
+    } 
+ 
+ public float getcapacitateSac(){
+     return capacitateSac;
+ }
+ public void setcapacitateSac(float capacitateSac){
+         this.capacitateSac = capacitateSac;
+ }
+ 
+ public String gettipFiltru(){
+     return tipFiltru;
+ }
+ public void settipFiltru(String tipFiltru){
+     this.tipFiltru = tipFiltru;
+ }
+ 
+ public int getputereAspirare(){
+     return putereAspirare;
+ }
+ public void setputereAspirare(int putereAspirare){
+     this.putereAspirare = putereAspirare;
+ }
+ 
+ public int getdurataBateriei(){
+     return durataBateriei;
+ }
+ public void setdurataBateriei( int durataBateriei){
+     this.durataBateriei = durataBateriei;
+ }
+ public String getmaterial(){
+     return material;
+ }
+ public void setmaterial(String material){
+     this.material = material;
+ }
 }
+

@@ -83,7 +83,7 @@ public class MasinaTunsIarba extends Aparat implements InterfataAparat{
         this.volumCosColector = m.volumCosColector;
     }  
     
-    public String getTipAlimentare() {
+   public String getTipAlimentare() {
         return tipAlimentare;
     }
     public void setTipAlimentare(String tipAlimentare) {
@@ -109,10 +109,10 @@ public class MasinaTunsIarba extends Aparat implements InterfataAparat{
         return latimeTaiere;
     }
     public void setLatimeTaiere(float latimeTaiere) {
-        this.latimeTaiere = latimeTaiere;
+       this.latimeTaiere = latimeTaiere;
     }
 
-    public int getTrepteTaiere() {
+   public int getTrepteTaiere() {
         return trepteTaiere;
     }
     public void setTrepteTaiere(int trepteTaiere) {
@@ -124,7 +124,7 @@ public class MasinaTunsIarba extends Aparat implements InterfataAparat{
     }
     public void setVolumCosColector(float volumCosColector) {
         this.volumCosColector = volumCosColector;
-    }
-    
+   }
+  
     
 }
