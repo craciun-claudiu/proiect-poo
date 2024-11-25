@@ -75,39 +75,39 @@ public class Drujba extends Aparat implements InterfataAparat{
         this.capacitateRezervorUlei = m.capacitateRezervorUlei;
     }
 
-     public float getputereMotor() {
+     public float getPutereMotor() {
         return putereMotor;
     }
-    public void setputereMotor(float putereMotor) {
+    public void setPutereMotor(float putereMotor) {
         this.putereMotor = putereMotor;
     }
     
     
-    public float getcapacitateCilindrica() {
+    public float getCapacitateCilindrica() {
         return capacitateCilindrica;
     }
-    public void setcapacitateCilindrica(float capacitateCilindrica) {
+    public void setCapacitateCilindrica(float capacitateCilindrica) {
         this.capacitateCilindrica = capacitateCilindrica;
     }
 
-    public int getvitezaMaximaRPM() {
+    public int getVitezaMaximaRPM() {
         return vitezaMaximaRPM;
     }
-    public void setvitezaMaximaRPM(int vitezaMaximaRPM) {
+    public void setVitezaMaximaRPM(int vitezaMaximaRPM) {
         this.vitezaMaximaRPM = vitezaMaximaRPM;
     }
 
-    public int getcapacitateRezervor() {
+    public int getCapacitateRezervor() {
         return capacitateRezervor;
     }
     public void setLatimeTaiere(int capacitateRezervor) {
        this.capacitateRezervor = capacitateRezervor;
     }
 
-   public int getcapacitateRezervorUlei() {
+   public int getCapacitateRezervorUlei() {
         return capacitateRezervorUlei;
     }
-    public void setcapacitateRezervorUlei(int capacitateRezervorUlei) {
+    public void setCapacitateRezervorUlei(int capacitateRezervorUlei) {
         this.capacitateRezervorUlei = capacitateRezervorUlei;
     }  
 }

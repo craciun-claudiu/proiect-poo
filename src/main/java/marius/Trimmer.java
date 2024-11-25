@@ -76,39 +76,39 @@ public class Trimmer extends Aparat implements InterfataAparat{
         this.numarTrepte = m.numarTrepte;
     }
 
-    public String getbrand() {
+    public String getBrand() {
         return brand;
     }
-    public void setbrand(String brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
     
     
-    public float getlatimeLama() {
+    public float getLatimeLama() {
         return latimeLama;
     }
-    public void setlatimeLama(float latimeLama) {
+    public void setLatimeLama(float latimeLama) {
         this.latimeLama = latimeLama;
     }
 
-    public int getdurataBaterie() {
+    public int getDurataBaterie() {
         return durataBaterie;
     }
-    public void setdurataBaterie(int durataBaterie) {
+    public void setDurataBaterie(int durataBaterie) {
         this.durataBaterie = durataBaterie;
     }
 
-    public float getdurataIncarcare() {
+    public float getDurataIncarcare() {
         return durataIncarcare;
     }
-    public void setdurataIncarcare(float durataIncarcare) {
+    public void setDurataIncarcare(float durataIncarcare) {
        this.durataIncarcare = durataIncarcare;
     }
 
-   public int getnumarTrepte() {
+   public int getNumarTrepte() {
         return numarTrepte;
     }
-    public void setnumarTrepte(int numarTrepte) {
+    public void setNumarTrepte(int numarTrepte) {
         this.numarTrepte = numarTrepte;
     }  
 }
