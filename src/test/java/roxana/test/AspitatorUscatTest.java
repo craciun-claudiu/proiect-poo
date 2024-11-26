@@ -19,7 +19,7 @@ public class AspitatorUscatTest {
         System.out.print(asp);
         AspiratorUscat asp2 = new AspiratorUscat("Samsung", "vertical", 500, "alb", 5.5f, 4.4f, "HEPA", 190, 60, "plastic");
         System.out.print(asp2);
-        AspiratorUscat asp3 = new AspiratorUscat("Beko", "vertical",600, "negru",6.7f, 3.5f, "HERA", 220, 45, "metal");
+        AspiratorUscat asp3 = new AspiratorUscat(asp2);
         System.out.print(asp3);
         
         AspiratorUscat[] v = new AspiratorUscat[10];

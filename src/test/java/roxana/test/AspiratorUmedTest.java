@@ -35,7 +35,7 @@ public class AspiratorUmedTest {
         v[9] = new AspiratorUmed("Ryer", "fara sac", 650f, "Rosu", 5, 7.7f, 85, 6.2f, 6f, true);
         
         for(int i=0; i<10; i++){
-            System.out.println(v[10]);
+            System.out.println(v[i]);
         }
         
         
