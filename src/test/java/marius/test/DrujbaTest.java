@@ -21,6 +21,27 @@ public class DrujbaTest {
         System.out.println(aparat);
         Drujba d = new Drujba();
         System.out.print(d);
+        
+        Aparat[] aparate = new Aparat[10];
+        aparate[0] = new Aparat("Stihl", "MS 271 Farm Boss", 2500, "Rosu", 42);
+        aparate[1] = new Aparat("Huasqvarna", "550 XP Mark II", 400, "Albastru", 6.8f);
+        aparate[2] = new Aparat("Makita", "EA6100P45E", 3900, "Verde", 5.3f);
+        aparate[3] = new Aparat("Echo", "CS-590 Timber Wolf", 2400, "Negru", 25);
+        aparate[4] = new Aparat("Dolmar", "PS-6100", 1300, "Alb", 12);
+        aparate[5] = new Aparat("Jonserd", "CS 2255", 1500, "Portocaliu", 11);
+        aparate[6] = new Aparat("AL-KO", "Classic 4.66", 2700, "Rosu", 17);
+        aparate[7] = new Aparat("McCulloch", "CS 50S", 1000, "Gri", 35);
+        aparate[8] = new Aparat("Ryobi", "RCS2340", 1600, "Mov", 7.1f);
+        aparate[9] = new Aparat("Partner", "MS 180", 2000, "Galben", 40);
+        
+        //Afisare aparate cu pretul mai mic de 2500 si culoarea verde
+        System.out.println("Aparatele cu pretul mai mic de 2000 si culoarea albastru:");
+        for(int i = 0 ; i < 10 ; i++){
+            if((aparate[i].getPret() < 2000f) && (aparate[i].getCuloare().compareTo("Albastru") == 0)){
+                System.out.println(aparate[i]);
+            }
+        }
+        
         Drujba drujba1 = new Drujba("Blade Alpin","Wolfson STX-620", 500.00f, "rosu", 1.5f, 3.0f, 50.0f, 4, 20, 15);
         System.out.println(drujba1);
         Drujba drujba2 = new Drujba(drujba1);
@@ -34,13 +55,15 @@ public class DrujbaTest {
         v[3] = new Drujba("Echo", "CS-590 Timber Wolf", 1600, "Negru", 12, 3, 60.5f, 36, 38, 5);
         v[4] = new Drujba("Dolmar", "PS-6100", 3000, "Alb", 11, 4.2f, 49.2f, 36, 41, 6);
         v[5] = new Drujba("Jonserd", "CS 2255", 1000, "Portocaliu", 17, 1.9f, 30.8f, 40, 41, 5);
-        v[6] = new Drujba("Oleo-Mac", "GS 650", 1500, "Negru", 22, 2.5f, 50.9f, 2, 46, 7);
+        v[6] = new Drujba(v[2]);
         v[7] = new Drujba("McCulloch", "CS 50S", 5000, "Gri", 35, 2.8f, 62.8f, 36, 47, 6);
         v[8] = new Drujba("Ryobi", "RCS2340", 800, "Mov", 7.1f, 2.5f, 68.2f, 1400, 25, 4);
         v[9] = new Drujba("Partner", "MS 180", 3200, "Galben", 40, 4.2f, 51.8f, 3, 46, 6);
     
         for(int i = 0 ; i < 10 ; i++){
+            if(i % 2 == 0) {
             System.out.println(v[i]);
+            }
         }   
     }
 }

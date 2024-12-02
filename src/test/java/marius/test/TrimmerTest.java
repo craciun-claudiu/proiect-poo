@@ -21,6 +21,27 @@ public class TrimmerTest {
         System.out.println(aparat);
         Trimmer t = new Trimmer();
         System.out.print(t);
+        
+        Aparat[] aparate = new Aparat[10];
+        aparate[0] = new Aparat("Stihl", "MS 271 Farm Boss", 2500, "Rosu", 42);
+        aparate[1] = new Aparat("Huasqvarna", "550 XP Mark II", 400, "Albastru", 5.3f);
+        aparate[2] = new Aparat("Makita", "EA6100P45E", 3900, "Verde", 5.9f);
+        aparate[3] = new Aparat("Echo", "CS-590 Timber Wolf", 2400, "Negru", 25);
+        aparate[4] = new Aparat("Dolmar", "PS-6100", 1300, "Alb", 12);
+        aparate[5] = new Aparat("Jonserd", "CS 2255", 1500, "Portocaliu", 11);
+        aparate[6] = new Aparat("Bosch", "Classic 4.66", 2700, "Rosu", 3.8f);
+        aparate[7] = new Aparat("AL-KO", "CS 50S", 1000, "Gri", 6.8f);
+        aparate[8] = new Aparat("Ryobi", "RCS2340", 1600, "Mov", 7.1f);
+        aparate[9] = new Aparat("Black+Decker", "MS 180", 2000, "Galben", 40);
+        
+        //Afisare aparate cu pretul mai mic de 2500 si culoarea verde
+        System.out.println("Aparatele cu pretul mai mic de 1000 si culoarea mov:");
+        for(int i = 0 ; i < 10 ; i++){
+            if((aparate[i].getPret() < 1000f) && (aparate[i].getCuloare().compareTo("Mov") == 0)){
+                System.out.println(aparate[i]);
+            }
+        }
+        
         Trimmer t2 = new Trimmer("Bosch" , "Modelul bun", 18.2f, "albastru", 30, "Phillips", 10.5f, 2, 8f, 4);
         System.out.println(t2);
         Trimmer t3 = new Trimmer(t2);
