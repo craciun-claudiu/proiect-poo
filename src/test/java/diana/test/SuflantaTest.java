@@ -39,6 +39,11 @@ public class SuflantaTest {
         System.out.println(test);
         test.setVitezaMaxima((short) 11111);
         System.out.println(test.getVitezaMaxima());
+        
+        System.out.println("\nSuflantele cu pretul mai mare de 220 de lei si cu alimentare la retea sunt:");
+        for(int i=0; i<10; i++)
+            if(s[i].getPret()>220f && s[i].getTipAlimentare().equals("la retea"))
+                System.out.println(s[i]);
     }
     
 }
