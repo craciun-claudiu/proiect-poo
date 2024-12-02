@@ -13,14 +13,14 @@ import comun.Aparat;
  */
 public class AspitatorUscatTest {
     public static void main(String[] args){
-        Aparat aparat = new Aparat("prod","model",150,"verde",130.5f);
-        System.out.println(aparat);
-        AspiratorUscat asp = new AspiratorUscat();
-        System.out.print(asp);
-        AspiratorUscat asp2 = new AspiratorUscat("Samsung", "vertical", 500, "alb", 5.5f, 4.4f, "HEPA", 190, 60, "plastic");
-        System.out.print(asp2);
-        AspiratorUscat asp3 = new AspiratorUscat(asp2);
-        System.out.print(asp3);
+        //Aparat aparat = new Aparat("prod","model",150,"verde",130.5f);
+        //System.out.println(aparat);
+        //AspiratorUscat asp = new AspiratorUscat();
+        //System.out.print(asp);
+        //AspiratorUscat asp2 = new AspiratorUscat("Samsung", "vertical", 500, "alb", 5.5f, 4.4f, "HEPA", 190, 60, "plastic");
+        //System.out.print(asp2);
+        //AspiratorUscat asp3 = new AspiratorUscat(asp2);
+        //System.out.print(asp3);
         
         AspiratorUscat[] v = new AspiratorUscat[10];
         
@@ -35,8 +35,11 @@ public class AspitatorUscatTest {
         v[8] = new AspiratorUscat("Rowenta","vertcal", 560, "albastru", 6.7f, 4.8f, "HEPA", 210, 70, "plastic");
         v[9] = new AspiratorUscat("Samsung","compact", 575, "negru", 6.3f, 5.2f, "ciclonic", 220, 80,"metal");
         
-        for (int i = 0; i<0; i++){
-            System.out.println(v[i]);
+        
+             System.out.println("Aspiratoare uscate cu putere de aspirare mai mare de 700W si o durata a bateriei de 60min");
+                for(int i=0; i<10; i++){
+                    if(v[i].getputereAspirare() > 700 && v[i].getdurataBateriei() == 60)
+                        System.out.println(v[i]);
         }
     }
     

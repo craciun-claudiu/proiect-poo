@@ -12,14 +12,14 @@ import comun.Aparat;
  */
 public class AspiratorUmedTest {
     public static void main(String[] args) {
-        Aparat aparat = new Aparat("prod", "model", 120, "gri", 15.3f);
-        System.out.println(aparat);
-        AspiratorUmed aspirator = new AspiratorUmed();
-        System.out.print(aspirator);
-        AspiratorUmed aspirator2 = new AspiratorUmed("Beko", "cu sac", 125f, "Rosu", 10, 5.5f, 75, 6.5f, 4.5f, true);
-        System.out.print(aspirator2);
-        AspiratorUmed aspirator3 = new AspiratorUmed(aspirator2);
-        System.out.print(aspirator3);
+        //Aparat aparat = new Aparat("prod", "model", 120, "gri", 15.3f);
+        //System.out.println(aparat);
+        //AspiratorUmed aspirator = new AspiratorUmed();
+       // System.out.print(aspirator);
+        //AspiratorUmed aspirator2 = new AspiratorUmed("Beko", "cu sac", 125f, "Rosu", 10, 5.5f, 75, 6.5f, 4.5f, true);
+        //System.out.print(aspirator2);
+        //AspiratorUmed aspirator3 = new AspiratorUmed(aspirator2);
+        //System.out.print(aspirator3);
         
         AspiratorUmed[] v = new AspiratorUmed[10];
         
@@ -34,8 +34,13 @@ public class AspiratorUmedTest {
         v[8] = new AspiratorUmed("amXea", "cu sac", 600f, "Mov", 7, 7.2f, 95, 5.5f, 5f, false);
         v[9] = new AspiratorUmed("Ryer", "fara sac", 650f, "Rosu", 5, 7.7f, 85, 6.2f, 6f, true);
         
-        for(int i=0; i<10; i++){
-            System.out.println(v[i]);
+        
+        
+        
+                System.out.println("Aspiratoare umede cu un nivel de zgomot sub 80dB si lungimea cablului de 3m");
+                for(int i=0; i<10; i++){
+                    if(v[i].getnivelZgomot() < 80 && v[i].getlungimeCablu() == 3f)
+                        System.out.println(v[i]);
         }
         
         
