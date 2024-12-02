@@ -44,7 +44,7 @@ public class AparatSpalareCuPresiuneTest {
         
         System.out.println("\nAparatele de spalare cu presiune ce au un debit maxim de peste 360 l/h si culorile verde si negru sunt: ");
         for(int i=0; i<10; i++)
-            if(a[i].getDebitMaxim()>360 && a[i].getCuloare().equals("verde, negru"))
+            if(a[i].getDebitMaxim()>360 && (a[i].getCuloare().equals("verde, negru") || a[i].getCuloare().equals("negru, verde")))
                 System.out.println(a[i]);
     }
     
