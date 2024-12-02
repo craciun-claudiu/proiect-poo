@@ -30,7 +30,7 @@ public class SuflantaTest {
         v[9] = new Aparat("Einhell", "TE-CB18/180", 149.99f, "rosu, negru", 0.550f);
         
         for(int i=0; i<10; i++)
-            if(v[i].getPret()>155 && v[i].getGreutate()<750)
+            if(v[i].getPret()>155 && v[i].getGreutate()<0.750)
                 System.out.println(v[i]);
 
         
