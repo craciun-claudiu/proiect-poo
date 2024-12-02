@@ -19,15 +19,15 @@ public class MasinaTunsIarbaTest {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        Aparat aparat = new Aparat("prod","model1",176,"albastru",155.3f);
-        System.out.println(aparat);
-        Aparat aparat2 = new Aparat();
-        System.out.println(aparat2);
-        Aparat aparat3 = new Aparat(aparat);
-        System.out.println(aparat3);
+        //Aparat aparat = new Aparat("prod","model1",176,"albastru",155.3f);
+        //System.out.println(aparat);
+        //Aparat aparat2 = new Aparat();
+        //System.out.println(aparat2);
+        //Aparat aparat3 = new Aparat(aparat);
+        //System.out.println(aparat3);
         
         Aparat[] aparate = new Aparat[10];
-        aparate[0] = new Aparat("Honda", "HRX2VKA", 2500, "Roșu", 42);
+        aparate[0] = new Aparat("Honda", "HRX2VKA", 2500, "Verde", 42);
         aparate[1] = new Aparat("Bosch", "Rotak 4", 400, "Verde", 6.8f);
         aparate[2] = new Aparat("Husqvarna", "LC 33", 3900, "Portocaliu", 26);
         aparate[3] = new Aparat("Makita", "DLM", 2400, "Albastru", 15);
@@ -38,16 +38,20 @@ public class MasinaTunsIarbaTest {
         aparate[8] = new Aparat("Flymo", "Hover", 1600, "Portocaliu cu gri", 5.5f);
         aparate[9] = new Aparat("Wolf-Garten", "A 120", 2000, "Roșu cu galben", 35);
         
+        //Afisare aparate cu pretul mai mic de 2500 si culoarea verde
+        System.out.println("Aparatele cu pretul mai mic de 2500 si culoarea verde:");
         for(int i = 0 ; i < 10 ; i++){
-            System.out.println(aparate[i]);
+            if((aparate[i].getPret() < 2500f) && (aparate[i].getCuloare().compareTo("Verde") == 0)){
+                System.out.println(aparate[i]);
+            }
         }
         
-        MasinaTunsIarba m = new MasinaTunsIarba();
-        System.out.println(m);
-        MasinaTunsIarba masina = new MasinaTunsIarba("Steinhaus","PRO-GLM502",999.99f,"rosu",31,"Benzina","Otel",3.5f,50f,7,60);
-        System.out.println(masina);
-        MasinaTunsIarba masina2 = new MasinaTunsIarba(masina);
-        System.out.println(masina2);
+        //MasinaTunsIarba m = new MasinaTunsIarba();
+        //System.out.println(m);
+        //MasinaTunsIarba masina = new MasinaTunsIarba("Steinhaus","PRO-GLM502",999.99f,"rosu",31,"Benzina","Otel",3.5f,50f,7,60);
+        //System.out.println(masina);
+        //MasinaTunsIarba masina2 = new MasinaTunsIarba(masina);
+        //System.out.println(masina2);
         
         MasinaTunsIarba[] v = new MasinaTunsIarba[10];
         
@@ -62,8 +66,11 @@ public class MasinaTunsIarbaTest {
         v[8] = new MasinaTunsIarba("Flymo", "Hover Vac 250", 600, "Portocaliu cu gri", 5.5f, "Electrică", "Plastic durabil", 1400, 25, 4, 15 );
         v[9] = new MasinaTunsIarba("Wolf-Garten", "A 460 A SP HW", 2200, "Roșu cu galben", 35, "Benzină", "Oțel inoxidabil", 3.2f, 46, 6, 60 );
     
+        //Afisare masini de tuns iarba care merg pe benzina si au latimea de taiere mai mica decat 40cm
+        System.out.println("Afisare masini de tuns iarba care merg pe benzina si volumul cosului colector mai mic sau egal cu 60 de litrii");
         for(int i = 0 ; i < 10 ; i++){
-            System.out.println(v[i]);
+            if(v[i].getTipAlimentare().compareTo("Benzină") == 0 && v[i].getVolumCosColector() <= 60f)
+                System.out.println(v[i]);
         }
     
     }
