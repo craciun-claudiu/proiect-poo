@@ -6,6 +6,7 @@ package claudiu.test;
 
 import claudiu.MasinaTunsIarba;
 import claudiu.Motosapa;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -61,6 +62,7 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         inputVolumCosColector.setToolTipText("ex:60");
 
         buttonMTI.setText("Afiseaza masinile");
+        buttonMTI.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         buttonMTI.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 buttonMTIMouseClicked(evt);
@@ -167,6 +169,7 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         }
         afisareText.setText(s);
         }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate masina de tuns iarba", "Error",JOptionPane.ERROR_MESSAGE);
             System.out.println("eroare la input masina tuns iarba");
         }
     }//GEN-LAST:event_buttonMTIMouseClicked
@@ -183,6 +186,7 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         }
         afisareText2.setText(s);
         }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
             System.out.println("eroare la input motosapa");
         }
     }//GEN-LAST:event_buttonMotosapaMouseClicked
