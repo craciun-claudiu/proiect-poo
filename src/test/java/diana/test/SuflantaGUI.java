@@ -19,10 +19,10 @@ public class SuflantaGUI extends javax.swing.JFrame {
     public SuflantaGUI() {
         initComponents();
         initVectorSuflanta();
-        Button.addActionListener(new java.awt.event.ActionListener() {
+        Afisare.addActionListener(new java.awt.event.ActionListener() {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            buttonButtonMouseClicked(evt);
+            ButonAfisareMouseClicked(evt);
         }
     });
     }
@@ -40,7 +40,7 @@ public class SuflantaGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pretMinimCerut = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Button = new javax.swing.JButton();
+        Afisare = new javax.swing.JButton();
         tipAlimentareCeruta = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Text = new javax.swing.JTextArea();
@@ -61,7 +61,7 @@ public class SuflantaGUI extends javax.swing.JFrame {
 
         jLabel3.setText("Introduceti tipul de alimentare:");
 
-        Button.setText("Afisati  rezultatele");
+        Afisare.setText("Afisati  rezultatele");
 
         tipAlimentareCeruta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +96,7 @@ public class SuflantaGUI extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(162, 162, 162)
-                        .addComponent(Button))
+                        .addComponent(Afisare))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(87, 87, 87)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -116,7 +116,7 @@ public class SuflantaGUI extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(tipAlimentareCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addComponent(Button)
+                .addComponent(Afisare)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
@@ -133,7 +133,7 @@ public class SuflantaGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tipAlimentareCerutaActionPerformed
 
-    private void buttonButtonMouseClicked(java.awt.event.ActionEvent evt){
+    private void ButonAfisareMouseClicked(java.awt.event.ActionEvent evt){
          try{
         String v = "";
         String tipCerut = tipAlimentareCeruta.getText();
@@ -144,8 +144,8 @@ public class SuflantaGUI extends javax.swing.JFrame {
         }
         Text.setText(v);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input motosapa");
+            JOptionPane.showMessageDialog(rootPane, "Eroare la campurile editate", "Error",JOptionPane.ERROR_MESSAGE);
+            System.out.println("eroare la input");
         }
     }
  
@@ -197,7 +197,7 @@ public class SuflantaGUI extends javax.swing.JFrame {
         s[9] = new Suflanta("Einhell", "TE-CB18/180", 149.99f, "rosu, negru", 0.550f, "acumulator", "electric", (byte) 2, (byte) 180, (short) 60, 7800);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button;
+    private javax.swing.JButton Afisare;
     private javax.swing.JTextArea Text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
