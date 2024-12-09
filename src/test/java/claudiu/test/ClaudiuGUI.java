@@ -6,6 +6,7 @@ package claudiu.test;
 
 import claudiu.MasinaTunsIarba;
 import claudiu.Motosapa;
+import comun.Aparat;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class ClaudiuGUI extends javax.swing.JFrame {
      * Creates new form ClaudiuGUI
      */
     public ClaudiuGUI() {
+        initVectorAparate();
         initVectorMasinaTunsIarba();
         initVectorMotosapa();
         initComponents();
@@ -48,6 +50,14 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         buttonMotosapa = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         afisareText2 = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        inputGreutateAparat = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        inputPretAparat = new javax.swing.JTextField();
+        buttonAparat = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        afisareText3 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +105,28 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         afisareText2.setRows(5);
         jScrollPane2.setViewportView(afisareText2);
 
+        jLabel7.setText("Selectare aparate");
+
+        jLabel8.setText("Introduceti greutatea:");
+
+        inputGreutateAparat.setToolTipText("ex:15");
+
+        jLabel9.setText("Introduceti pretul");
+        jLabel9.setToolTipText("");
+
+        inputPretAparat.setToolTipText("ex2500");
+
+        buttonAparat.setText("Afiseaza aparatele");
+        buttonAparat.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonAparatMouseClicked(evt);
+            }
+        });
+
+        afisareText3.setColumns(20);
+        afisareText3.setRows(5);
+        jScrollPane3.setViewportView(afisareText3);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,7 +141,7 @@ public class ClaudiuGUI extends javax.swing.JFrame {
                     .addComponent(inputVolumCosColector, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonMTI)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 28, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
@@ -118,7 +150,20 @@ public class ClaudiuGUI extends javax.swing.JFrame {
                     .addComponent(inputGreutateMotosapa, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputTipPornireMotosapa, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(29, 29, 29))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8)
+                            .addComponent(inputGreutateAparat, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
+                            .addComponent(inputPretAparat, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonAparat))
+                        .addGap(114, 114, 114))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,31 +171,38 @@ public class ClaudiuGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputTipAlimentareMTI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputGreutateMotosapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputGreutateMotosapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputGreutateAparat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputVolumCosColector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputTipPornireMotosapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputTipPornireMotosapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputPretAparat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonMTI)
-                    .addComponent(buttonMotosapa))
+                    .addComponent(buttonMotosapa)
+                    .addComponent(buttonAparat))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -191,6 +243,23 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_buttonMotosapaMouseClicked
 
+    private void buttonAparatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAparatMouseClicked
+        // TODO add your handling code here:
+        try{
+        String s = "";
+        float pret = Float.parseFloat(inputPretAparat.getText());
+        float greutate = Float.parseFloat(inputGreutateAparat.getText());
+        for(int i = 0 ; i < 10 ; i++){
+            if(aparate[i].getGreutate() <= greutate && aparate[i].getPret() <= pret)
+                s=s+aparate[i]+'\n';
+        }
+        afisareText3.setText(s);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
+            System.out.println("eroare la input motosapa");
+        }
+    }//GEN-LAST:event_buttonAparatMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -226,6 +295,19 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         });
     }
     
+    private void initVectorAparate(){
+        aparate[0] = new Aparat("Honda", "HRX2VKA", 2500, "Verde", 42);
+        aparate[1] = new Aparat("Bosch", "Rotak 4", 400, "Verde", 6.8f);
+        aparate[2] = new Aparat("Husqvarna", "LC 33", 3900, "Portocaliu", 26);
+        aparate[3] = new Aparat("Makita", "DLM", 2400, "Albastru", 15);
+        aparate[4] = new Aparat("Stihl", "RMA 4", 1300, "Alb cu portocaliu", 21);
+        aparate[5] = new Aparat("Greenworks", "GGX1", 1500, "Verde", 18);
+        aparate[6] = new Aparat("AL-KO", "Classic 4.66", 2700, "Roșu cu negru", 27);
+        aparate[7] = new Aparat("Einhell", "GE-CM 36/47", 1000, "Roșu cu negru", 25);
+        aparate[8] = new Aparat("Flymo", "Hover", 1600, "Portocaliu cu gri", 5.5f);
+        aparate[9] = new Aparat("Wolf-Garten", "A 120", 2000, "Roșu cu galben", 35);
+    }
+    
     private void initVectorMasinaTunsIarba(){
         v[0] = new MasinaTunsIarba("Honda", "HRX217VKA", 3500, "Rosu", 42, "Benzina", "Otel inoxidabil", 5.5f, 53, 7, 70  );
         v[1] = new MasinaTunsIarba("Bosch", "Rotak 32", 800, "Verde", 6.8f, "Electrica", "Otel calit", 1200, 32, 3, 31);
@@ -255,9 +337,13 @@ public class ClaudiuGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea afisareText;
     private javax.swing.JTextArea afisareText2;
+    private javax.swing.JTextArea afisareText3;
+    private javax.swing.JButton buttonAparat;
     private javax.swing.JButton buttonMTI;
     private javax.swing.JButton buttonMotosapa;
+    private javax.swing.JTextField inputGreutateAparat;
     private javax.swing.JTextField inputGreutateMotosapa;
+    private javax.swing.JTextField inputPretAparat;
     private javax.swing.JTextField inputTipAlimentareMTI;
     private javax.swing.JTextField inputTipPornireMotosapa;
     private javax.swing.JTextField inputVolumCosColector;
@@ -267,9 +353,14 @@ public class ClaudiuGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
+    Aparat[] aparate = new Aparat[10];
     MasinaTunsIarba[] v = new MasinaTunsIarba[10];
     Motosapa[] u = new Motosapa[10];
 
