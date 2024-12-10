@@ -210,7 +210,7 @@ public class RoxanaGUI extends javax.swing.JFrame {
             afisareText.setText(s);
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aspiratoare umede", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input aspiratoare umede");
+            
            
         }
     }//GEN-LAST:event_jButton1MouseClicked
@@ -227,8 +227,10 @@ public class RoxanaGUI extends javax.swing.JFrame {
                 s=s+u[i]+'\n';
         }
         afisareText2.setText(s);
-    }catch(Exception e){JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aspiratoare uscate", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input aspiratoare uscate");
+    }catch(Exception e){
+        JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aspiratoare uscate", "Error",JOptionPane.ERROR_MESSAGE);
+            
+    
         
     }
     }//GEN-LAST:event_jButton2MouseClicked
@@ -246,7 +248,7 @@ public class RoxanaGUI extends javax.swing.JFrame {
         afisareText1.setText(s);
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aparate", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input aparate");
+            
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
