@@ -245,8 +245,8 @@ public class RoxanaGUI extends javax.swing.JFrame {
         }
         afisareText1.setText(s);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input motosapa");
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aparate", "Error",JOptionPane.ERROR_MESSAGE);
+            System.out.println("eroare la input aparate");
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
