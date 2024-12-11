@@ -8,6 +8,8 @@ import claudiu.MasinaTunsIarba;
 import claudiu.Motosapa;
 import comun.Aparat;
 import javax.swing.JOptionPane;
+import java.io.*;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -19,9 +21,10 @@ public class ClaudiuGUI extends javax.swing.JFrame {
      * Creates new form ClaudiuGUI
      */
     public ClaudiuGUI() {
-        initVectorAparate();
-        initVectorMasinaTunsIarba();
-        initVectorMotosapa();
+        //initVectorAparate();
+        //initVectorMasinaTunsIarba();
+        //initVectorMotosapa();
+        initCei3VectoriDinFisier("src/test/java/claudiu/test/aparate.txt");
         initComponents();
     }
 
@@ -220,13 +223,13 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         String s = "";
         String tipAlimen = inputTipAlimentareMTI.getText();
         float volumCC = Float.parseFloat(inputVolumCosColector.getText());
-        for(int i = 0 ; i < 10 ; i++){
+        for(int i = 0 ; i < v.length ; i++){
             if(v[i].getTipAlimentare().compareTo(tipAlimen) == 0 && v[i].getVolumCosColector() <= volumCC)
                 s=s+v[i]+'\n';
         }
         afisareText.setText(s);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate masina de tuns iarba", "Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri introduse pentru masinile de tuns iarba", "Error",JOptionPane.ERROR_MESSAGE);
             System.out.println("eroare la input masina tuns iarba");
         }
     }//GEN-LAST:event_buttonMTIMouseClicked
@@ -237,13 +240,13 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         String s = "";
         String tipPornire = inputTipPornireMotosapa.getText();
         float greutate = Float.parseFloat(inputGreutateMotosapa.getText());
-        for(int i = 0 ; i < 10 ; i++){
+        for(int i = 0 ; i < u.length ; i++){
             if(u[i].getGreutate() <= greutate && u[i].getTipPornire().compareTo(tipPornire) == 0)
                 s=s+u[i]+'\n';
         }
         afisareText2.setText(s);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri introduse pentru motosapa", "Error",JOptionPane.ERROR_MESSAGE);
             System.out.println("eroare la input motosapa");
         }
     }//GEN-LAST:event_buttonMotosapaMouseClicked
@@ -254,14 +257,14 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         String s = "";
         float pret = Float.parseFloat(inputPretAparat.getText());
         float greutate = Float.parseFloat(inputGreutateAparat.getText());
-        for(int i = 0 ; i < 10 ; i++){
+        for(int i = 0 ; i < aparate.length ; i++){
             if(aparate[i].getGreutate() <= greutate && aparate[i].getPret() <= pret)
                 s=s+aparate[i]+'\n';
         }
         afisareText3.setText(s);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input motosapa");
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri introduse pentru aparat", "Error",JOptionPane.ERROR_MESSAGE);
+            System.out.println("eroare la input aparate");
         }
     }//GEN-LAST:event_buttonAparatMouseClicked
 
@@ -338,6 +341,85 @@ public class ClaudiuGUI extends javax.swing.JFrame {
         u[8] = new Motosapa("Texas", "Fusion 10TG", 3300, "Negru", 85, "Benzină", "Manuala", "Freze industriale", "Reglabil", 5, 150);
         u[9] = new Motosapa("AgroPro", "MTX 80", 2500, "Albastru", 50, "Diesel", "Demaror", "Freze cu lame", "Pliabil", 4, 130);
     }
+    
+    private void initCei3VectoriDinFisier(String caleaSpreFisier){
+        FileReader fr = null;
+        BufferedReader br = null;
+        String line = "";
+        int n1,n2,n3;
+        StringTokenizer st = null;
+        try{
+            fr = new FileReader(caleaSpreFisier);
+            br = new BufferedReader(fr);
+            line = br.readLine();
+            n1 = Integer.parseInt(line);
+            aparate = new Aparat[n1];
+            for(int i = 0 ; i < n1 ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 5){
+                    aparate[i] = new Aparat();
+                    aparate[i].setProducator(st.nextToken());
+                    aparate[i].setModel(st.nextToken());
+                    aparate[i].setPret(Float.parseFloat(st.nextToken()));
+                    aparate[i].setCuloare(st.nextToken());
+                    aparate[i].setGreutate(Float.parseFloat(st.nextToken()));
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt aparate");
+                }
+            }
+            line = br.readLine();
+            n2 = Integer.parseInt(line);
+            v = new MasinaTunsIarba[n2];
+            for(int i = 0 ; i < n2 ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 11){
+                    v[i] = new MasinaTunsIarba();
+                    v[i].setProducator(st.nextToken());
+                    v[i].setModel(st.nextToken());
+                    v[i].setPret(Float.parseFloat(st.nextToken()));
+                    v[i].setCuloare(st.nextToken());
+                    v[i].setGreutate(Float.parseFloat(st.nextToken()));
+                    v[i].setTipAlimentare(st.nextToken());
+                    v[i].setMaterialLama(st.nextToken());
+                    v[i].setPutere(Float.parseFloat(st.nextToken()));
+                    v[i].setLatimeTaiere(Float.parseFloat(st.nextToken()));
+                    v[i].setTrepteTaiere(Integer.parseInt(st.nextToken()));
+                    v[i].setVolumCosColector(Float.parseFloat(st.nextToken()));
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt masina de tuns iarba");
+                }
+            }
+            line = br.readLine();
+            n3 = Integer.parseInt(line);
+            u = new Motosapa[n3];
+            for(int i = 0 ; i < n2 ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 11){
+                    u[i] = new Motosapa();
+                    u[i].setProducator(st.nextToken());
+                    u[i].setModel(st.nextToken());
+                    u[i].setPret(Float.parseFloat(st.nextToken()));
+                    u[i].setCuloare(st.nextToken());
+                    u[i].setGreutate(Float.parseFloat(st.nextToken()));
+                    u[i].setTipAlimentare(st.nextToken());
+                    u[i].setTipPornire(st.nextToken());
+                    u[i].setTipTaiere(st.nextToken());
+                    u[i].setTipManer(st.nextToken());
+                    u[i].setVitezaMaxima(Integer.parseInt(st.nextToken()));
+                    u[i].setLungime(Float.parseFloat(st.nextToken()));
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt masina de tuns iarba");
+                }
+            }
+            br.close();
+            fr.close();
+        }catch(Exception e){
+            System.out.println("Eroare la deschiderea/citirea din fisier");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea afisareText;
@@ -365,8 +447,8 @@ public class ClaudiuGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
-    Aparat[] aparate = new Aparat[10];
-    MasinaTunsIarba[] v = new MasinaTunsIarba[10];
-    Motosapa[] u = new Motosapa[10];
+    Aparat[] aparate;
+    MasinaTunsIarba[] v;
+    Motosapa[] u;
 
 }

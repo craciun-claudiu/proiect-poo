@@ -1,0 +1,33 @@
+10
+Honda,HRX2VKA,2500,Verde,42
+Bosch,Rotak 4,400,Verde,6.8
+Husqvarna,LC 33,3900,Portocaliu,26
+Makita,DLM,2400,Albastru,15
+Stihl,RMA 4,1300,Alb cu portocaliu,21
+Greenworks,GGX1,1500,Verde,18
+AL-KO,Classic 4.66,2700,Roșu cu negru,27
+Einhell,GE-CM 36/47,1000,Roșu cu negru,25
+Flymo,Hover,1600,Portocaliu cu gri,5.5
+Wolf-Garten,A 120,2000,Roșu cu galben,35
+10
+Honda,HRX217VKA,3500,Roșu,42,Benzina,Oțel inoxidabil,5.5,53,7,70
+Bosch,Rotak 32,800,Verde,6.8,Electrica,Oțel călit,1200,32,3,31
+Husqvarna,LC 140S,1900,Portocaliu,26,Benzina,Oțel carbon,2.5,40,6,50
+Makita,DLM380Z,1300,Albastru,15,Baterie,Oțel inoxidabil,36,38,5,40
+Stihl,RMA 443 C,2500,Alb cu portocaliu,21,Baterie,Oțel călit,36,41,6,55
+Greenworks,G40LM41,1400,Verde,18,Baterie,Aluminiu,40,41,5,50
+AL-KO,Classic 4.66 P-A,1200,Roșu cu negru,27,Benzina,Oțel,2.7,46,7,65
+Einhell,GE-CM 36/47 S HW Li,2000,Roșu cu negru,25,Baterie,Oțel inoxidabil,36,47,6,75
+Flymo,Hover Vac 250,600,Portocaliu cu gri,5.5f,Electrica,Plastic durabil,1400,25,4,15 
+Wolf-Garten,A 460 A SP HW,2200,Roșu cu galben,35,Benzina,Oțel inoxidabil,3.2,46,6,60
+10
+Honda,FG110,2200,Roșu,14,Benzină,Manuala,Freze rotative,Ergonomic,3,100
+Stihl,MH 445,3200,Portocaliu,40,Benzină,Demaror,Freze rotative,Reglabil,4,120
+Makita,ELM3311,1900,Albastru,12,Electrică,Buton electric,Freze cu lame,Fix,3,105
+Einhell,GC-MT 1636/1,1500,Roșu,29,Benzină,Manuala,Freze cu disc,Pliabil,3,115
+Husqvarna,TF 230,4000,Portocaliu,66,Benzină,Demaror,Freze grele,Ergonomic,5,140
+Greenworks,G-MT40,2800,Verde,17,Electrică,Buton electric,Freze rotative,Fix,4,110
+Alpina,A405,1700,Alb cu negru,30,Benzină,Manuala,Freze cu lame,Reglabil,3,125
+Viking,HB 560,4500,Verde,48,Benzină,Demaror,Freze grele,Ergonomic,4,135
+Texas,Fusion 10TG,3300,Negru,85,Benzină,Manuala,Freze industriale,Reglabil,5,150
+AgroPro,MTX 80,2500,Albastru,50,Diesel,Demaror,Freze cu lame,Pliabil,4,130
