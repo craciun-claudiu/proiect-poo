@@ -210,7 +210,7 @@ public class RoxanaGUI extends javax.swing.JFrame {
             afisareText.setText(s);
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aspiratoare umede", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input aspiratoare umede");
+            
            
         }
     }//GEN-LAST:event_jButton1MouseClicked
@@ -227,8 +227,10 @@ public class RoxanaGUI extends javax.swing.JFrame {
                 s=s+u[i]+'\n';
         }
         afisareText2.setText(s);
-    }catch(Exception e){JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aspiratoare uscate", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input aspiratoare uscate");
+    }catch(Exception e){
+        JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aspiratoare uscate", "Error",JOptionPane.ERROR_MESSAGE);
+            
+    
         
     }
     }//GEN-LAST:event_jButton2MouseClicked
@@ -245,8 +247,8 @@ public class RoxanaGUI extends javax.swing.JFrame {
         }
         afisareText1.setText(s);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate motosapa", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input motosapa");
+            JOptionPane.showMessageDialog(rootPane, "Eroare campuri editate aparate", "Error",JOptionPane.ERROR_MESSAGE);
+            
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
@@ -289,16 +291,16 @@ public class RoxanaGUI extends javax.swing.JFrame {
         });
     }
     private void initVectorAparate(){
-        a[0] = new Aparat("Honda", "HRX2VKA", 2500, "Verde", 42);
-        a[1] = new Aparat("Bosch", "Rotak 4", 400, "Verde", 6.8f);
-        a[2] = new Aparat("Husqvarna", "LC 33", 3900, "Portocaliu", 26);
-        a[3] = new Aparat("Makita", "DLM", 2400, "Albastru", 15);
-        a[4] = new Aparat("Stihl", "RMA 4", 1300, "Alb cu portocaliu", 21);
-        a[5] = new Aparat("Greenworks", "GGX1", 1500, "Verde", 18);
-        a[6] = new Aparat("AL-KO", "Classic 4.66", 2700, "Roșu cu negru", 27);
-        a[7] = new Aparat("Einhell", "GE-CM 36/47", 1000, "Roșu cu negru", 25);
-        a[8] = new Aparat("Flymo", "Hover", 1600, "Portocaliu cu gri", 5.5f);
-        a[9] = new Aparat("Wolf-Garten", "A 120", 2000, "Roșu cu galben", 35);
+        a[0] = new Aparat("Rowenta", "HRX2VKA", 2500, "Albastru", 42);
+        a[1] = new Aparat("Bosch", "Rotak 4", 400, "Rosu", 6.8f);
+        a[2] = new Aparat("Beko", "LC 33", 3900, "Negru", 26);
+        a[3] = new Aparat("Samsung", "DLM", 2400, "Verde", 15);
+        a[4] = new Aparat("Bosch", "RMA 4", 1300, "Mov", 21);
+        a[5] = new Aparat("Dyson", "GGX1", 1500, "Roz", 18);
+        a[6] = new Aparat("Samsung", "Classic 4.66", 2700, "Portocaliu", 27);
+        a[7] = new Aparat("Beko", "GE-CM 36/47", 1000, "Roșu", 25);
+        a[8] = new Aparat("Rowenta", "Hover", 1600, "Verde", 5.5f);
+        a[9] = new Aparat("Bosch", "A 120", 2000, "Negru", 35);
     }
     private void initVectorAspiratorUmed(){
         v[0] = new AspiratorUmed("Karcher", "fara sac", 360f, "Galben", 6, 6.7f, 80, 5.5f, 4f, false);

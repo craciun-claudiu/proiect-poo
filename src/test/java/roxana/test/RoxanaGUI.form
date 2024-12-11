@@ -31,10 +31,8 @@
                       <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
                       <Component id="jButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="inputGreutateAparat" max="32767" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="inputPretAparat" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="inputPretAparat" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane3" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
               </Group>
