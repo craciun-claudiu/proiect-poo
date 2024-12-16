@@ -7,6 +7,8 @@ import comun.Aparat;
 import roxana.AspiratorUmed;
 import roxana.AspiratorUscat;
 import javax.swing.JOptionPane;
+import java.io.*;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -18,10 +20,12 @@ public class RoxanaGUI extends javax.swing.JFrame {
      * Creates new form RoxanaGUI
      */
     public RoxanaGUI() {
-        initVectorAparate();
-        initVectorAspiratorUmed();
-        initVectorAspiratorUscat();
+        //initVectorAparate();
+        //initVectorAspiratorUmed();
+        //initVectorAspiratorUscat();
+        initCei3VectoriDinFisier("src/test/java/roxana/test/aparat.txt");
         initComponents();
+        afiseazaVectoriiCitit();
     }
 
     /**
@@ -57,6 +61,15 @@ public class RoxanaGUI extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         afisareText1 = new javax.swing.JTextPane();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        AfisareText3 = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        AfisareText4 = new javax.swing.JTextArea();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        AfisareText5 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,87 +124,138 @@ public class RoxanaGUI extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(afisareText1);
 
+        jLabel10.setText("Aparate:");
+
+        AfisareText3.setColumns(20);
+        AfisareText3.setRows(5);
+        jScrollPane4.setViewportView(AfisareText3);
+
+        jLabel11.setText("Aspiratoare umede:");
+
+        AfisareText4.setColumns(20);
+        AfisareText4.setRows(5);
+        jScrollPane5.setViewportView(AfisareText4);
+
+        jLabel12.setText("Aspiratoare uscate:");
+
+        AfisareText5.setColumns(20);
+        AfisareText5.setRows(5);
+        jScrollPane6.setViewportView(AfisareText5);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel7)
                         .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addComponent(inputGreutateAparat)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(inputPretAparat, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(inputPretAparat)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
                     .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputnivelZgomot, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(inputlungimeFurtun, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(inputnivelZgomot, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(inputlungimeFurtun, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(inputcapacitateSac, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(inputdurataBateriei, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel10)
+                        .addGap(207, 207, 207)
+                        .addComponent(jLabel11)
+                        .addGap(143, 143, 143)
+                        .addComponent(jLabel12)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel5))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(inputnivelZgomot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(inputcapacitateSac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inputPretAparat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputlungimeFurtun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputdurataBateriei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputGreutateAparat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(inputPretAparat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputGreutateAparat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputnivelZgomot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputlungimeFurtun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addComponent(jButton1))
+                    .addComponent(jScrollPane1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(inputcapacitateSac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputdurataBateriei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(49, 49, 49))))
         );
 
         pack();
@@ -326,7 +390,105 @@ public class RoxanaGUI extends javax.swing.JFrame {
         u[8] = new AspiratorUscat("Rowenta","vertcal", 560, "albastru", 6.7f, 4.8f, "HEPA", 210, 70, "plastic");
         u[9] = new AspiratorUscat("Samsung","compact", 575, "negru", 6.3f, 5.2f, "ciclonic", 220, 80,"metal");
 }
+    
+    private void afiseazaVectoriiCitit(){
+        String s = "";
+        for(int i = 0 ; i < n1 ; i++){
+            s=s+a[i]+"\n";
+        }
+        AfisareText3.setText(s);
+        s = "";
+        for(int i = 0 ; i < n2 ; i++){
+            s=s+v[i]+"\n";
+        }
+        AfisareText4.setText(s);
+        s = "";
+        for(int i = 0 ; i < n3 ; i++){
+            s=s+u[i]+"\n";
+        }
+        AfisareText5.setText(s);
+    }
+    private void initCei3VectoriDinFisier(String caleaSpreFisier){
+        FileReader fr = null;
+        BufferedReader br = null;
+        String line = "";
+        StringTokenizer st = null;
+        try{
+            fr = new FileReader(caleaSpreFisier);
+            br = new BufferedReader(fr);
+            line = br.readLine();
+            n1 = Integer.parseInt(line);
+            a = new Aparat[n1];
+            for(int i = 0 ; i < n1 ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 5){
+                    a[i] = new Aparat();
+                    a[i].setProducator(st.nextToken());
+                    a[i].setModel(st.nextToken());
+                    a[i].setPret(Float.parseFloat(st.nextToken()));
+                    a[i].setCuloare(st.nextToken());
+                    a[i].setGreutate(Float.parseFloat(st.nextToken()));
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt aparate");
+                }
+            }
+           line = br.readLine();
+            n2 = Integer.parseInt(line);
+            v = new AspiratorUmed[n2];
+            for(int i = 0 ; i < n2 ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 10){
+                    v[i] = new AspiratorUmed();
+                    v[i].setProducator(st.nextToken());
+                    v[i].setModel(st.nextToken());
+                    v[i].setPret(Float.parseFloat(st.nextToken()));
+                    v[i].setCuloare(st.nextToken());
+                    v[i].setGreutate(Float.parseFloat(st.nextToken()));
+                    v[i].setcapacitatRezervorApa(Float.parseFloat(st.nextToken()));
+                    v[i].setnivelZgomot(Integer.parseInt(st.nextToken()));
+                    v[i].setlungimeCablu(Float.parseFloat(st.nextToken()));
+                    v[i].setlungimeFurtun(Float.parseFloat(st.nextToken()));
+                    v[i].setutilizareDetergent(Boolean.parseBoolean(st.nextToken()));
+                    
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt masina de tuns iarba");
+                }
+            }
+        line = br.readLine();
+            n3 = Integer.parseInt(line);
+            u = new AspiratorUscat[n3];
+            for(int i = 0 ; i < n2 ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 10){
+                    u[i] = new AspiratorUscat();
+                    u[i].setProducator(st.nextToken());
+                    u[i].setModel(st.nextToken());
+                    u[i].setPret(Float.parseFloat(st.nextToken()));
+                    u[i].setCuloare(st.nextToken());
+                    u[i].setGreutate(Float.parseFloat(st.nextToken()));
+                    u[i].setcapacitateSac(Float.parseFloat(st.nextToken()));
+                    u[i].settipFiltru(st.nextToken());
+                    u[i].setputereAspirare(Integer.parseInt(st.nextToken()));
+                    u[i].setdurataBateriei(Integer.parseInt(st.nextToken()));
+                    u[i].setmaterial(st.nextToken());
+                    
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt masina de tuns iarba");
+                }
+            }
+            br.close();
+            fr.close();
+        }catch(Exception e){
+            System.out.println("Eroare la deschiderea/citirea din fisier");
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea AfisareText3;
+    private javax.swing.JTextArea AfisareText4;
+    private javax.swing.JTextArea AfisareText5;
     private javax.swing.JTextPane afisareText;
     private javax.swing.JTextPane afisareText1;
     private javax.swing.JTextPane afisareText2;
@@ -340,6 +502,9 @@ public class RoxanaGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -351,9 +516,13 @@ public class RoxanaGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     // End of variables declaration//GEN-END:variables
- Aparat[] a = new Aparat[10];
- AspiratorUmed[] v = new AspiratorUmed[10];
- AspiratorUscat[] u = new AspiratorUscat[10];
+ int n1, n2, n3;
+ Aparat[] a ;
+ AspiratorUmed[] v ;
+ AspiratorUscat[] u ;
 
 }
