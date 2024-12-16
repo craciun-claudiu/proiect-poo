@@ -80,7 +80,7 @@ public AspiratorUmed(){
     }
     
     public void setcapacitatRezervorApa(float capacitateRezervoraApa){
-        this.capacitateRezervorApa = capacitateRezervorApa;
+        this.capacitateRezervorApa = capacitateRezervoraApa;
     }
     
     public int getnivelZgomot(){

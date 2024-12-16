@@ -18,6 +18,7 @@ amXea,cu sac,500,Negru,4,6.7,60,7.2,6.2,false
 Ryer,fara sac,550,Roz,5,7.3,70,6.9,6.1,true
 Yanx,cu sac,600,Alb,8,6.4,90,7,6.2,true
 Karcher,cu sac,570,Portocaliu,5,6.5,75,4.5,3,true
+amXea,cu sac,600f,Mov,7,7.2,95,5.5,5,false
 Ryer,fara sac,650,Rosu,5,7.7,85,6.2,6,true
 10
 Rowenta,compact,700,rosu,6.2,4.2,HERA,210,50,plastic
