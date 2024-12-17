@@ -1,0 +1,12 @@
+10
+Dyson,FloorExpert,2500.99,Negru,10.2,Dyson,FE2025,6000,2.0,40
+Samsung,CleanMaster,1800.0,Gri,9.1,Samsung,CM2022,4500,1.8,39
+LG,FloorBot,2000.0,Argintiu,7.8,LG,FB2030,5200,2.5,38
+iRobot,Roomba,3000.0,Alb,6.5,iRobot,RB2031,7000,3.0,37
+Bissell,CrossWave,1500.0,Albastru,8.0,Bissell,CW2028,4800,1.7,36
+Philips,AquaClean,2300.0,Negru,8.5,Philips,AC2032,5500,2.3,35
+Hoover,SmartWash,2100.0,Roșu,8.2,Hoover,SW2027,5100,2.2,34
+Shark,SteamMop,1900.0,Alb,7.0,Shark,SM2026,4700,1.9,33
+Vax,PlatinumSmart,2200.0,Gri,7.5,Vax,PS2030,5300,2.1,32
+Rowenta,CleanPro,2400.0,Albastru,7.9,Rowenta,CP2035,5600,2.4,31
+

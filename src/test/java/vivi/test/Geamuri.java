@@ -5,6 +5,11 @@
 package vivi.test;
 import vivi.AparatCuratatGeamuri;
 import javax.swing.JOptionPane;
+import java.io.*;
+import java.util.StringTokenizer;
+
+
+
 /**
  *
  * @author Viv
@@ -17,8 +22,10 @@ public class Geamuri extends javax.swing.JFrame {
     
     public Geamuri() {
         initComponents();
-        initVectorACG();
-        Buton.addActionListener(new java.awt.event.ActionListener() {
+        //initVectorACG();
+        initVectorFisierACG("src/test/java/vivi/test/geamuri.txt");
+        afisareVectorFisier();
+        jbuton1.addActionListener(new java.awt.event.ActionListener() {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             AfisareMouseClicked(evt);
@@ -41,9 +48,11 @@ public class Geamuri extends javax.swing.JFrame {
         zgomotCitit = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         moduriMaximCuratare = new javax.swing.JTextField();
-        Buton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Text = new javax.swing.JTextArea();
+        text = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textFisier = new javax.swing.JTextArea();
+        jbuton1 = new javax.swing.JButton();
 
         jLabel4.setText("jLabel4");
 
@@ -61,38 +70,49 @@ public class Geamuri extends javax.swing.JFrame {
 
         jLabel3.setText("Numar maxim de moduri de curatare:");
 
-        Buton.setText("Afisare");
+        text.setColumns(20);
+        text.setRows(5);
+        jScrollPane1.setViewportView(text);
 
-        Text.setColumns(20);
-        Text.setRows(5);
-        jScrollPane1.setViewportView(Text);
+        textFisier.setColumns(20);
+        textFisier.setRows(5);
+        jScrollPane2.setViewportView(textFisier);
+
+        jbuton1.setText("Afisare ");
+        jbuton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbuton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel3)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(zgomotCitit, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(moduriMaximCuratare, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(205, 205, 205)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(Buton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(zgomotCitit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(moduriMaximCuratare, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(96, 96, 96))
+                        .addGap(213, 213, 213)
+                        .addComponent(jbuton1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,11 +127,16 @@ public class Geamuri extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(moduriMaximCuratare, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addComponent(Buton)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jbuton1)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addGap(39, 39, 39))))
         );
 
         pack();
@@ -126,7 +151,7 @@ public class Geamuri extends javax.swing.JFrame {
                 if(geamuri[i].getNumarZgomot() <= zgomot && geamuri[i].getNumarModuriCuratare() <= moduriCuratare)
                     h = h + geamuri[i]+'\n';
             }
-            Text.setText(h);
+            text.setText(h);
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Eroare la campurile editate", "Error",JOptionPane.ERROR_MESSAGE);
             System.out.println("eroare la input");
@@ -137,6 +162,10 @@ public class Geamuri extends javax.swing.JFrame {
     private void zgomotCititActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zgomotCititActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_zgomotCititActionPerformed
+
+    private void jbuton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbuton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbuton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,16 +213,65 @@ private void initVectorACG(){
         geamuri[8] = new AparatCuratatGeamuri("Bissell", "GlassPro", 899.99f, "Albastru", 1.2f, "Textil", 3, 55.0f, (byte) 3, "Manual");
         geamuri[9] = new AparatCuratatGeamuri("iRobot", "GlassBot", 1299.99f, "Alb", 1.5f, "Silicon", 5, 70.0f, (byte) 5, "Automat");
 }
-AparatCuratatGeamuri[] geamuri = new AparatCuratatGeamuri[10];
+private void afisareVectorFisier(){
+     String h = " ";
+        for(int i = 0; i < 10; i++ ){
+            h = h + geamuri[i]+'\n';    
+        }
+        textFisier.setText(h);
+}
+    
+private void initVectorFisierACG(String caleaFisierului){
+     FileReader fr = null;
+        BufferedReader br = null;
+        String line = "";
+        StringTokenizer st = null;
+        try{
+            fr = new FileReader(caleaFisierului);
+            br = new BufferedReader(fr);
+            line = br.readLine();
+            N = Integer.parseInt(line);
+            geamuri = new AparatCuratatGeamuri[N];
+            for(int i = 0 ; i < N ; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 10){
+                    geamuri[i] = new AparatCuratatGeamuri();
+                    geamuri[i].setProducator(st.nextToken());
+                    geamuri[i].setModel(st.nextToken());
+                    geamuri[i].setPret(Float.parseFloat(st.nextToken()));
+                    geamuri[i].setCuloare(st.nextToken());
+                    geamuri[i].setGreutate(Float.parseFloat(st.nextToken()));
+                    geamuri[i].setMaterialLaveta(st.nextToken());
+                    geamuri[i].setNumarSenzoriDetectareMargini(Integer.parseInt(st.nextToken()));
+                    geamuri[i].setNumarZgomot(Float.parseFloat(st.nextToken()));
+                    geamuri[i].setNumarModuriCuratare(Byte.parseByte(st.nextToken()));
+                    geamuri[i].setTipManevrare(st.nextToken());
+                }else{
+                    System.out.println("Problema la formatul continutului din fisier pt aparate");
+                }
+        }
+            br.close();
+            fr.close();
+}catch(Exception e){
+            System.out.println("Eroare la deschiderea/citirea din fisier");
+}
+}
+AparatCuratatGeamuri[] geamuri;
+int N;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Buton;
-    private javax.swing.JTextArea Text;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jbuton1;
     private javax.swing.JTextField moduriMaximCuratare;
+    private javax.swing.JTextArea text;
+    private javax.swing.JTextArea textFisier;
     private javax.swing.JTextField zgomotCitit;
     // End of variables declaration//GEN-END:variables
+
 }
