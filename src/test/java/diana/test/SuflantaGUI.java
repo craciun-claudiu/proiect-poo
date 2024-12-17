@@ -4,8 +4,10 @@
  */
 package diana.test;
 import diana.Suflanta;
-import diana.Suflanta;
 import javax.swing.JOptionPane;
+import java.io.*;
+import java.util.StringTokenizer;
+
 
 /**
  *
@@ -18,7 +20,11 @@ public class SuflantaGUI extends javax.swing.JFrame {
      */
     public SuflantaGUI() {
         initComponents();
-        initVectorSuflanta();
+        //initVectorSuflanta();
+        initVectorCititDinFisier("src/test/java/diana/test/Suflanta.txt");
+        afisareVectorCititDinFisier();
+        
+       
         Afisare.addActionListener(new java.awt.event.ActionListener() {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,11 +50,14 @@ public class SuflantaGUI extends javax.swing.JFrame {
         tipAlimentareCeruta = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Text = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        afisareDinFisier = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Selectare suflante");
+        jLabel1.setText("Selectati suflante dupa urmatoarele criterii");
 
         jLabel2.setText("Introduceti pretul minim: ");
 
@@ -75,51 +84,65 @@ public class SuflantaGUI extends javax.swing.JFrame {
         Text.setRows(5);
         jScrollPane1.setViewportView(Text);
 
+        afisareDinFisier.setColumns(20);
+        afisareDinFisier.setRows(5);
+        jScrollPane2.setViewportView(afisareDinFisier);
+
+        jLabel4.setText("Suflante disponibile");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pretMinimCerut, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tipAlimentareCeruta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(102, 102, 102))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tipAlimentareCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pretMinimCerut, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(Afisare))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(89, 89, 89)
+                        .addComponent(Afisare)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(pretMinimCerut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tipAlimentareCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(Afisare)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(tipAlimentareCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(Afisare)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pretMinimCerut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,7 +168,6 @@ public class SuflantaGUI extends javax.swing.JFrame {
         Text.setText(v);
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Eroare la campurile editate", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input");
         }
     }
  
@@ -186,25 +208,82 @@ public class SuflantaGUI extends javax.swing.JFrame {
     
     private void initVectorSuflanta(){
         s[0] = new Suflanta("LittleDomi", "Suflanta aer fara fir", 144.85f, "negru", 0.500f, "acumulator", "electric", (byte) 3, (byte) 68, (short) 74, 7500);
-        s[1] = new Suflanta("Steinhaus", "PRO-BL3000", 179.99f, "negru, rosu", 0.650f, "la retea", "electric", (byte) 6, (byte) 120, (short) 92, 9000);
-        s[2] = new Suflanta("Goxawee", "M7057", 189.98f, "negru, portocaliu", 0.716f, "acumulator", "electric", (byte) 3, (byte) 120, (short) 150, 8500);
-        s[3] = new Suflanta("Heinner", "VSAF002", 209.99f, "negru, verde", 0.690f, "la retea", "electric", (byte) 4, (byte) 90, (short) 84, 8000);
-        s[4] = new Suflanta("Bosch", "GSA18V", 259.99f, "albastru, negru", 0.800f, "acumulator", "electric", (byte) 2, (byte) 150, (short) 100, 10000);
+        s[1] = new Suflanta("Steinhaus", "PRO-BL3000", 179.99f, "negru", 0.650f, "la retea", "electric", (byte) 6, (byte) 120, (short) 92, 9000);
+        s[2] = new Suflanta("Goxawee", "M7057", 189.98f, "portocaliu", 0.716f, "acumulator", "electric", (byte) 3, (byte) 120, (short) 150, 8500);
+        s[3] = new Suflanta("Heinner", "VSAF002", 209.99f, "verde", 0.690f, "la retea", "electric", (byte) 4, (byte) 90, (short) 84, 8000);
+        s[4] = new Suflanta("Bosch", "GSA18V", 259.99f, "albastru", 0.800f, "acumulator", "electric", (byte) 2, (byte) 150, (short) 100, 10000);
         s[5] = new Suflanta("Makita", "UB1103", 239.95f, "albastru", 0.600f, "la retea", "electric", (byte) 3, (byte) 600, (short) 75, 9500);
-        s[6] = new Suflanta("Black+Decker", "BV6600", 289.99f, "negru, rosu", 0.900f, "acumulator", "electric", (byte) 4, (byte) 400, (short) 95, 12000);
-        s[7] = new Suflanta("DeWalt", "DCE100B", 219.99f, "galben, negru", 0.650f, "acumulator", "electric", (byte) 3, (byte) 180, (short) 82, 8500);
-        s[8] = new Suflanta("Ryobi", "RY40440", 279.99f, "verde, negru", 0.750f, "acumulator", "electric", (byte) 5, (byte) 320, (short) 88, 11000);
-        s[9] = new Suflanta("Einhell", "TE-CB18/180", 149.99f, "rosu, negru", 0.550f, "acumulator", "electric", (byte) 2, (byte) 180, (short) 60, 7800);
+        s[6] = new Suflanta("Black+Decker", "BV6600", 289.99f, "rosu", 0.900f, "acumulator", "electric", (byte) 4, (byte) 400, (short) 95, 12000);
+        s[7] = new Suflanta("DeWalt", "DCE100B", 219.99f, "galben", 0.650f, "acumulator", "electric", (byte) 3, (byte) 180, (short) 82, 8500);
+        s[8] = new Suflanta("Ryobi", "RY40440", 279.99f, "verde", 0.750f, "acumulator", "electric", (byte) 5, (byte) 320, (short) 88, 11000);
+        s[9] = new Suflanta("Einhell", "TE-CB18/180", 149.99f, "rosu", 0.550f, "acumulator", "electric", (byte) 2, (byte) 180, (short) 60, 7800);
     }
+    
+    
+    private void afisareVectorCititDinFisier(){
+        String a = "";
+        for(int i = 0; i<n; i++){
+            a = a + s[i] + "\n";
+        }
+        afisareDinFisier.setText(a);
+    }
+    
+    private void initVectorCititDinFisier(String caleFisier){
+        FileReader fr = null;
+        BufferedReader br = null;
+        String line = "";
+        StringTokenizer st = null;
+        try{
+            fr = new FileReader(caleFisier);
+            br = new BufferedReader(fr);
+            line = br.readLine();
+            n = Integer.parseInt(line);
+            s = new Suflanta[n];
+            for(int i=0; i<n; i++){
+                line = br.readLine();
+                st = new StringTokenizer(line,",");
+                if(st.countTokens() == 11){
+                    s[i] = new Suflanta();
+                    s[i].setProducator(st.nextToken());
+                    s[i].setModel(st.nextToken());
+                    s[i].setPret(Float.parseFloat(st.nextToken()));
+                    s[i].setCuloare(st.nextToken());
+                    s[i].setGreutate(Float.parseFloat(st.nextToken()));
+                    s[i].setTipAlimentare(st.nextToken());
+                    s[i].setTipMotor(st.nextToken());
+                    s[i].setNumarTrepte(Byte.parseByte(st.nextToken()));
+                    s[i].setPutere(Byte.parseByte(st.nextToken()));
+                    s[i].setVitezaMaxima(Short.parseShort(st.nextToken()));
+                    s[i].setCapacitateAcumulator(Integer.parseInt(st.nextToken()));  
+                }
+                else{ 
+                    System.out.println("Linia " + (i + 1) + " nu are formatul potrivit: " + line);
+                }
+            }
+            br.close();
+            fr.close();
+            
+        } catch(Exception e){
+            System.out.println("Eroare la deschiderea/citirea din fisier");
+        }
+        
+    }
+    
+    
+    Suflanta[] s;
+    int n;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Afisare;
     private javax.swing.JTextArea Text;
+    private javax.swing.JTextArea afisareDinFisier;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField pretMinimCerut;
     private javax.swing.JTextField tipAlimentareCeruta;
     // End of variables declaration//GEN-END:variables
-    Suflanta[] s = new Suflanta[10];
+
 }

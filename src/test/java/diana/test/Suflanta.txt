@@ -1,0 +1,11 @@
+10
+LittleDomi,Suflanta aer fara fir,145,negru,0.500,acumulator,electric,3,68,74,7500
+Steinhaus,PRO-BL3000,180,negru,0.65,la retea,electric,6,120,92,9000
+Goxawee,M7057,190,portocaliu,0.716,acumulator,electric,3,120,150,8500
+Heinner,VSAF002,210,verde,0.69,la retea,electric,4,90,84,8000
+Makita,UB2000,195,albastru,0.75,acumulator,electric,4,110,80,8800
+DeWalt,DCE100B,220,galben,0.65,acumulator,electric,3,80,82,8500
+Black+Decker,BV6600,290,rosu,0.9,acumulator,electric,4,120,85,7500
+Ryobi,RY40440,280,verde,0.75,acumulator,electric,5,90,86,8500
+Bosch,GSA18V,260,albastru,0.8,acumulator,electric,2,90,100,7500
+Einhell,TE-CB18/180,150,rosu,0.55,acumulator,electric,2,110,60,7800

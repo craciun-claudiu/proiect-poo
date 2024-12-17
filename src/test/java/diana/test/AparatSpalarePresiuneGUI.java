@@ -3,9 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package diana.test;
-import diana.AparatSpalareCuPresiune;
+
 import diana.AparatSpalareCuPresiune;
 import javax.swing.JOptionPane;
+import java.io.*;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -18,7 +20,11 @@ public class AparatSpalarePresiuneGUI extends javax.swing.JFrame {
      */
     public AparatSpalarePresiuneGUI() {
         initComponents();
-        initVectorASP();
+        //initVectorASP();
+        initVectorDinFisier("src/test/java/diana/test/Aparat.txt");
+        afisareVector();
+        
+        
         ButonAfisare.addActionListener(new java.awt.event.ActionListener() {
         @Override
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,10 +51,13 @@ public class AparatSpalarePresiuneGUI extends javax.swing.JFrame {
         ButonAfisare = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Text = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        afisareFisier = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Afisare aparate de spalare cu presiune pentru conditiile");
+        jLabel1.setText("Selectare aparate de spalare cu presiune dupa criteriile");
 
         jLabel2.setText("Valoarea minima a debitului maxim:");
 
@@ -60,6 +69,12 @@ public class AparatSpalarePresiuneGUI extends javax.swing.JFrame {
         Text.setRows(5);
         jScrollPane1.setViewportView(Text);
 
+        afisareFisier.setColumns(20);
+        afisareFisier.setRows(5);
+        jScrollPane2.setViewportView(afisareFisier);
+
+        jLabel4.setText("Aparate de spalare cu presiune disponibile");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,42 +82,56 @@ public class AparatSpalarePresiuneGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(55, 55, 55)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(debitMaximCerut)
-                            .addComponent(presiuneMaximaCeruta, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(ButonAfisare))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(ButonAfisare))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(debitMaximCerut, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(presiuneMaximaCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addComponent(jLabel1)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(debitMaximCerut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(presiuneMaximaCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(ButonAfisare)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(debitMaximCerut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(presiuneMaximaCeruta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addComponent(ButonAfisare)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -121,7 +150,6 @@ public class AparatSpalarePresiuneGUI extends javax.swing.JFrame {
             Text.setText(v);
         }catch(Exception e){
             JOptionPane.showMessageDialog(rootPane, "Eroare la campurile editate", "Error",JOptionPane.ERROR_MESSAGE);
-            System.out.println("eroare la input");
         }
     }
     /**
@@ -158,27 +186,79 @@ public class AparatSpalarePresiuneGUI extends javax.swing.JFrame {
             }
         });
     }
+    
 private void initVectorASP(){
-        a[0] = new AparatSpalareCuPresiune("Bosch", "Universal Aquatak 130", 799.99f, "verde, negru", 7.8f, "la retea", (short) 130, (short) 360, (byte) 6, 0.45f);
-        a[1] = new AparatSpalareCuPresiune("Kärcher", "K5 Power Control", 1199.99f, "galben, negru", 13.1f, "la retea", (short) 145, (short) 500, (byte) 10, 1.0f);
+        a[0] = new AparatSpalareCuPresiune("Bosch", "Universal Aquatak 130", 799.99f, "verde", 7.8f, "la retea", (short) 130, (short) 360, (byte) 6, 0.45f);
+        a[1] = new AparatSpalareCuPresiune("Kärcher", "K5 Power Control", 1199.99f, "galben", 13.1f, "la retea", (short) 145, (short) 500, (byte) 10, 1.0f);
         a[2] = new AparatSpalareCuPresiune("Makita", "HW102", 499.99f, "albastru", 5.8f, "la retea", (short) 100, (short) 360, (byte) 5, 0.35f);
-        a[3] = new AparatSpalareCuPresiune("Einhell", "TC-HP 1334", 399.99f, "rosu, negru", 4.2f, "la retea", (short) 110, (short) 340, (byte) 3, 0.30f);
-        a[4] = new AparatSpalareCuPresiune("Nilfisk", "Core 125", 899.99f, "albastru, negru", 6.6f, "la retea", (short) 125, (short) 460, (byte) 8, 0.75f);
-        a[5] = new AparatSpalareCuPresiune("Black+Decker", "BXPW1600E", 699.99f, "negru, portocaliu", 7.0f, "la retea", (short) 125, (short) 390, (byte) 6, 0.50f);
-        a[6] = new AparatSpalareCuPresiune("Ryobi", "RPW170XRB", 999.99f, "verde, negru", 11.2f, "la retea", (short) 150, (short) 420, (byte) 9, 0.85f);
-        a[7] = new AparatSpalareCuPresiune("Stanley", "SXPW25PE", 849.99f, "galben, negru", 9.5f, "la retea", (short) 150, (short) 450, (byte) 8, 1.20f);
-        a[8] = new AparatSpalareCuPresiune("Parkside", "PHD 150 F4", 599.99f, "verde, negru", 11.0f, "la retea", (short) 150, (short) 400, (byte) 10, 0.70f);
-        a[9] = new AparatSpalareCuPresiune("Lavor", "Skyviper 160", 749.99f, "gri, galben", 10.5f, "la retea", (short) 160, (short) 520, (byte) 12, 1.00f);
+        a[3] = new AparatSpalareCuPresiune("Einhell", "TC-HP 1334", 399.99f, "rosu", 4.2f, "la retea", (short) 110, (short) 340, (byte) 3, 0.30f);
+        a[4] = new AparatSpalareCuPresiune("Nilfisk", "Core 125", 899.99f, "albastru", 6.6f, "la retea", (short) 125, (short) 460, (byte) 8, 0.75f);
+        a[5] = new AparatSpalareCuPresiune("Black+Decker", "BXPW1600E", 699.99f, "portocaliu", 7.0f, "la retea", (short) 125, (short) 390, (byte) 6, 0.50f);
+        a[6] = new AparatSpalareCuPresiune("Ryobi", "RPW170XRB", 999.99f, "verde", 11.2f, "la retea", (short) 150, (short) 420, (byte) 9, 0.85f);
+        a[7] = new AparatSpalareCuPresiune("Stanley", "SXPW25PE", 849.99f, "negru", 9.5f, "la retea", (short) 150, (short) 450, (byte) 8, 1.20f);
+        a[8] = new AparatSpalareCuPresiune("Parkside", "PHD 150 F4", 599.99f, "negru", 11.0f, "la retea", (short) 150, (short) 400, (byte) 10, 0.70f);
+        a[9] = new AparatSpalareCuPresiune("Lavor", "Skyviper 160", 749.99f, "gri", 10.5f, "la retea", (short) 160, (short) 520, (byte) 12, 1.00f);
 }
-AparatSpalareCuPresiune[] a = new AparatSpalareCuPresiune[10];
+
+private void afisareVector(){
+    String s = "";
+    for(int i = 0; i < n; i++){
+        s=s+a[i]+"\n";
+    }
+    afisareFisier.setText(s);
+}
+
+private void initVectorDinFisier(String caleFisier){
+    FileReader fr = null;
+    BufferedReader br = null;
+    String line = "";
+    StringTokenizer st = null;
+    try{
+        fr = new FileReader(caleFisier);
+        br = new BufferedReader(fr);
+        line = br.readLine();
+        n = Integer.parseInt(line);
+        a = new AparatSpalareCuPresiune[n];
+        for(int i = 0; i < n; i++){
+            line = br.readLine();
+            st = new StringTokenizer(line,",");
+            if(st.countTokens() == 10){
+                a[i] = new AparatSpalareCuPresiune();
+                a[i].setProducator(st.nextToken());
+                a[i].setModel(st.nextToken());
+                a[i].setPret(Float.parseFloat(st.nextToken()));
+                a[i].setCuloare(st.nextToken());
+                a[i].setGreutate(Float.parseFloat(st.nextToken()));
+                a[i].setTipAlimentare(st.nextToken());
+                a[i].setPresiuneMaxima(Short.parseShort(st.nextToken()));
+                a[i].setDebitMaxim(Short.parseShort(st.nextToken()));
+                a[i].setLungimeFurtun(Byte.parseByte(st.nextToken()));
+                a[i].setCapacitateRecipientDetergent(Float.parseFloat(st.nextToken()));
+            }else{
+                System.out.println("Linia " + (i + 1) + " nu are formatul potrivit: " + line);
+            }
+        }
+        br.close();
+        fr.close(); 
+    }catch(Exception e){
+            System.out.println("Eroare la deschiderea/citirea din fisier");
+        }
+}
+
+
+AparatSpalareCuPresiune[] a;
+int n;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButonAfisare;
     private javax.swing.JTextArea Text;
+    private javax.swing.JTextArea afisareFisier;
     private javax.swing.JTextField debitMaximCerut;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField presiuneMaximaCeruta;
     // End of variables declaration//GEN-END:variables
 }

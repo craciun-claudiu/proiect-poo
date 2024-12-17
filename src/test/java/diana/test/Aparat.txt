@@ -1,0 +1,11 @@
+10
+Bosch,Universal Aquatak 130,800,verde,7.8,la retea,130,360,6,0.45
+Kärcher,K5 Power Control,1200,galben,13.1,la retea,145,500,10,1.0
+Makita,HW102,500,albastru,5.8,la retea,100,360,5,0.35
+Einhell,TC-HP 1334,400,rosu,4.2,la retea,110,340,3,0.3
+Nilfisk,Core 125,900,albastru,6.6,la retea,125,460,8,0.75
+Black+Decker,BXPW1600E,700,portocaliu,7.0,la retea,125,390,6,0.5
+Ryobi,RPW170XRB,1000,verde,11.2,la retea,150,420,9,0.85
+Stanley,SXPW25PE,850,negru,9.5,la retea,150,450,8,1.2
+Parkside,PHD 150 F4,600,negru,11.0,la retea,150,400,10,0.7
+Lavor,Skyviper 160,750,gri,10.5,la retea,160,520,12,1.0
